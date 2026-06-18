@@ -160,7 +160,7 @@ function animationLoop() {
     }
 }
 
-// Trigger logo fadeout after 3 seconds when scrolling starts
+// Trigger logo fadeout after 1 second when scrolling starts
 let logoFadeoutTriggered = false;
 function triggerLogoFadeoutOnScroll(scrollTop) {
     if (!logoFadeoutTriggered && scrollTop > 5) {
@@ -172,7 +172,7 @@ function triggerLogoFadeoutOnScroll(scrollTop) {
                 setTimeout(() => {
                     animationLogo.style.display = 'none';
                 }, 1200); // Wait for transition to finish
-            }, 3000); // 3 seconds delay
+            }, 1000); // 1 second delay
         }
     }
 }
