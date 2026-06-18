@@ -240,6 +240,35 @@ body {
     pointer-events: none;
 }
 
+/* Animation Logo Overlay */
+#animation-logo {
+    opacity: 1;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#animation-logo.opacity-0 {
+    opacity: 0;
+}
+.logo-fade-image {
+    max-width: 250px;
+    object-fit: contain;
+    animation: logoPulse 3s infinite ease-in-out;
+}
+@media (min-width: 768px) {
+    .logo-fade-image {
+        max-width: 400px;
+    }
+}
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.3));
+    }
+    50% {
+        transform: scale(1.02);
+        filter: drop-shadow(0 0 45px rgba(139, 92, 246, 0.5));
+    }
+}
+
 /* Scroll Container and Sections */
 .scroll-container {
     position: relative;

@@ -1,11 +1,17 @@
+// Disable automatic scroll restoration on reload
+if ('history' in window && 'scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+}
+
 // Configuration and Constants
-const TOTAL_FRAMES = 160;
+const START_FRAME = 49;
+const END_FRAME = 160;
 const isMobile = window.innerWidth < 768;
 const frameStep = isMobile ? 3 : 1; // Load every 3rd frame on mobile to save memory & bandwidth
 
 // Generate the frames to load based on the step size
 const framesToLoad = [];
-for (let i = 1; i <= TOTAL_FRAMES; i += frameStep) {
+for (let i = START_FRAME; i <= END_FRAME; i += frameStep) {
     framesToLoad.push(i);
 }
 const TOTAL_LOADABLE_FRAMES = framesToLoad.length;
@@ -130,47 +136,6 @@ function renderFrame(index) {
 // Loop control variables
 let isLoopActive = false;
 
-// Story sections and their scroll range percentages
-const storySections = [
-    { id: 'hero-section', start: 0, end: 18 },
-    { id: 'hydro-section', start: 20, end: 38 },
-    { id: 'material-section', start: 40, end: 58 },
-    { id: 'modular-section', start: 60, end: 78 },
-    { id: 'specs-trigger-section', start: 80, end: 98 }
-];
-
-// Update popup cards active states and parallax translates based on current interpolated frame percentage
-function updateStoryCards() {
-    const totalFrames = framesArray.length;
-    if (totalFrames <= 1) return;
-
-    // Calculate current scroll percentage based on interpolated currentFrameIndex
-    const currentPercent = (currentFrameIndex / (totalFrames - 1)) * 100;
-
-    storySections.forEach((sec) => {
-        const sectionEl = document.getElementById(sec.id);
-        if (!sectionEl) return;
-        const cardEl = sectionEl.querySelector('.slide-content');
-        if (!cardEl) return;
-
-        if (currentPercent >= sec.start && currentPercent <= sec.end) {
-            // Card is active inside this section range
-            cardEl.classList.add('active');
-
-            // Calculate progress (0 to 1) within this specific section range
-            const progress = (currentPercent - sec.start) / (sec.end - sec.start);
-
-            // Parallax offset: slide from bottom (+30px) to top (-30px) as we scroll down
-            const parallaxY = (0.5 - progress) * 60; // range: +30px to -30px
-            cardEl.style.transform = `translateY(${parallaxY}px)`;
-        } else {
-            // Card is inactive
-            cardEl.classList.remove('active');
-            cardEl.style.transform = ''; // clears inline styles to use css translation transitions
-        }
-    });
-}
-
 // Smooth frame transitions via Animation Loop (runs only when needed to save battery/CPU)
 function startAnimationLoop() {
     if (!isLoopActive) {
@@ -186,20 +151,38 @@ function animationLoop() {
     if (Math.abs(diff) > 0.01) {
         currentFrameIndex += diff * lerpFactor;
         renderFrame(Math.round(currentFrameIndex));
-        updateStoryCards();
         requestAnimationFrame(animationLoop);
     } else {
         // Converged, render exact target frame and stop loop recursion
         currentFrameIndex = targetFrameIndex;
         renderFrame(Math.round(currentFrameIndex));
-        updateStoryCards();
         isLoopActive = false;
+    }
+}
+
+// Trigger logo fadeout after 3 seconds when scrolling starts
+let logoFadeoutTriggered = false;
+function triggerLogoFadeoutOnScroll(scrollTop) {
+    if (!logoFadeoutTriggered && scrollTop > 5) {
+        logoFadeoutTriggered = true;
+        const animationLogo = document.getElementById('animation-logo');
+        if (animationLogo) {
+            setTimeout(() => {
+                animationLogo.classList.add('opacity-0');
+                setTimeout(() => {
+                    animationLogo.style.display = 'none';
+                }, 1200); // Wait for transition to finish
+            }, 3000); // 3 seconds delay
+        }
     }
 }
 
 // Calculate target frame index based on page scroll
 function updateScrollProgress() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    
+    // Trigger logo fadeout when scrolling
+    triggerLogoFadeoutOnScroll(scrollTop);
     
     // Fade out global scroll hint after user scrolls down
     const scrollHint = document.getElementById('scroll-hint');
@@ -236,6 +219,18 @@ async function init() {
 
     // Watch scroll position
     window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+    // If already scrolled down past 50px on load, hide the logo immediately
+    const initialScroll = window.scrollY || document.documentElement.scrollTop;
+    if (initialScroll > 50) {
+        logoFadeoutTriggered = true;
+        const animationLogo = document.getElementById('animation-logo');
+        if (animationLogo) {
+            animationLogo.classList.add('opacity-0');
+            animationLogo.style.display = 'none';
+        }
+    }
+
     updateScrollProgress(); // initial run
 }
 
