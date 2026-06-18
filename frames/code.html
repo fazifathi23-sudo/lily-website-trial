@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lily - Feel Pretty All Day Long</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B5CF6", // Soft purple
+                        "primary-light": "#A78BFA",
+                        "primary-dark": "#7C3AED",
+                        "background-light": "#FDFCFE",
+                        "background-dark": "#18181B",
+                        surface: {
+                            light: "#FFFFFF",
+                            dark: "#27272A"
+                        },
+                        text: {
+                            light: "#3F3F46",
+                            dark: "#E4E4E7"
+                        }
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                    },
+                    boxShadow: {
+                        soft: "0 10px 40px -10px rgba(139, 92, 246, 0.1)",
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .gradient-text {
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans antialiased selection:bg-primary selection:text-white transition-colors duration-300">
+<nav class="fixed w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex-shrink-0 flex items-center">
+<span class="font-display text-3xl font-semibold text-primary">Lily</span>
+</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#products">Products</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#comparison">Compare</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#benefits">Benefits</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#story">Our Story</a>
+</div>
+<div class="hidden md:flex items-center space-x-4">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-text-light dark:text-text-dark" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-outlined dark:hidden">dark_mode</span>
+<span class="material-icons-outlined hidden dark:block">light_mode</span>
+</button>
+<a class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full font-medium transition-colors shadow-lg shadow-primary/25" href="#products">Buy Now</a>
+</div>
+</div>
+</div>
+</nav>
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-pattern">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6 text-gray-900 dark:text-white">
+                    Feel Pretty <br/>
+<span class="gradient-text">All Day Long</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 font-light">
+                    Ultra-thin comfort and protection designed for your day and night. Experience the perfect blend of softness and security.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-medium text-lg transition-all transform hover:scale-105 shadow-lg shadow-primary/25" href="#products">Shop the Collection</a>
+<a class="bg-white dark:bg-surface-dark text-text-light dark:text-text-dark hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-4 rounded-full font-medium text-lg transition-all border border-gray-200 dark:border-gray-700 shadow-sm" href="#benefits">Explore Benefits</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<div class="relative group rounded-2xl overflow-hidden shadow-soft transform transition-transform hover:-translate-y-2 bg-white dark:bg-surface-dark p-4">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<img alt="Lily Day Use Pads packaging featuring bright floral and butterfly design" class="w-full h-auto object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFkE7KCGfyu_5mUsrD3IrZDOy9fjZqy9hpHtBoF5ZP9DOXXk3W_hfnAyI4XqkLWiuRM6aF1X7efOd2506L_JotxKQBb09bHzsDKMUb-EyZDpj22OImtij4AivkP6rqs-Sg6j6CcmlecUjFAF9aZ3v1Rv3hO7Vxc6K5UkzJSZ05vj2wiDwVWGdqcDT5sKeFg-wg0spVu5xkPnZVerV_-pXBb5_2AH50JLHMsm9IP1GSPC9H6Wl3b0gOixle5vw2a8fanl95KUUbNCvp"/>
+<div class="absolute bottom-6 left-6 right-6 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<span class="bg-white/90 dark:bg-black/80 backdrop-blur text-sm font-medium px-4 py-2 rounded-full text-gray-900 dark:text-white">Day Protection</span>
+</div>
+</div>
+<div class="relative group rounded-2xl overflow-hidden shadow-soft transform transition-transform hover:-translate-y-2 bg-white dark:bg-surface-dark p-4">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<img alt="Lily Night Use Pads packaging featuring lavender floral design" class="w-full h-auto object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzWhOsu4f64D-178rrqW4t3Bw5TMy8jXCvBOgoaAW08AcsVp9atH04ZmVMUB3qHFKEWuH6L5kawNaPOor_27scjkc00mSUh62N_Pro24rgDN5S7DA2CAXCgalwW3H61bbSYAWSzwhLzkVTzbMkOyFSWtfbjRbLyfT1TZ8vYbAFJQtU2tJf1CzAE_gH_e1ziS9swpEr0tI-QW6WCwejIjnQo2HvZtKex-B9lnT7I5avvVT-kpynfDt_DKoFfmgQMFz3mhA2K_347e22"/>
+<div class="absolute bottom-6 left-6 right-6 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<span class="bg-white/90 dark:bg-black/80 backdrop-blur text-sm font-medium px-4 py-2 rounded-full text-gray-900 dark:text-white">Night Protection</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-[#121214]" id="products">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Our Collection</h2>
+<p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Tailored protection for every part of your day.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+<div class="bg-gray-50 dark:bg-surface-dark rounded-3xl p-8 border border-gray-100 dark:border-gray-800 transition-all hover:shadow-xl hover:shadow-primary/10">
+<div class="mb-8 rounded-2xl overflow-hidden bg-white dark:bg-gray-900 p-6 flex justify-center items-center h-64">
+<img alt="Lily Day Use 245mm" class="w-full h-full object-contain transform hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzROGCYRoYnPI0lnedbqZwcmePAWF34MI-x30V6WTPs-uhGWROif327B1P4pESlQavmBS-Q6LgQK4dGCqqU4rgv-yqN1IisS6PG-1OPZWj_be_-_3HczPza98_2w4J676BASCHfOC627Uvvk9950XkMFUSfmiuq3L5qU6hYiHNiLfLYVTJJHVX5nFyI22gVx7Q4iPiLoaBf7Gqn8qdj8i95IkH3FzY11NbkEC63uybhWAwZQSNmNZd6KEp-VgpWo-Doq8TK5T0y8vA"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white mb-2">Day Use</h3>
+<p class="text-primary font-medium">245mm / 30 Pads</p>
+</div>
+<span class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Daily</span>
+</div>
+<p class="text-gray-600 dark:text-gray-400 mb-6 line-clamp-2">Ultra-thin design for maximum comfort during your daily activities. Stay fresh and confident from morning to evening.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="inline-flex items-center text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700"><span class="material-icons-outlined text-[16px] mr-1 text-primary">line_weight</span> Ultra Thin</span>
+<span class="inline-flex items-center text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700"><span class="material-icons-outlined text-[16px] mr-1 text-primary">self_improvement</span> Comfortable Fit</span>
+<span class="inline-flex items-center text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700"><span class="material-icons-outlined text-[16px] mr-1 text-primary">shield</span> Reliable</span>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="w-full text-center bg-primary hover:bg-primary-dark text-white py-3 rounded-xl font-medium transition-colors" href="#">Add to Cart</a>
+<div class="flex justify-center gap-4 pt-2">
+<a class="text-sm text-gray-500 hover:text-primary dark:hover:text-primary transition-colors underline underline-offset-4" href="#">Amazon</a>
+<a class="text-sm text-gray-500 hover:text-primary dark:hover:text-primary transition-colors underline underline-offset-4" href="#">Target</a>
+<a class="text-sm text-gray-500 hover:text-primary dark:hover:text-primary transition-colors underline underline-offset-4" href="#">Walmart</a>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-surface-dark rounded-3xl p-8 border border-gray-100 dark:border-gray-800 transition-all hover:shadow-xl hover:shadow-primary/10">
+<div class="mb-8 rounded-2xl overflow-hidden bg-white dark:bg-gray-900 p-6 flex justify-center items-center h-64">
+<img alt="Lily Night Use 290mm" class="w-full h-full object-contain transform hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYewZ8JR3bYVXyuHM9h6NQVK_B6_yBJR46bhcMo4bRyu1DAfEVqCuCLGNGAD0qPCitZL_2HG0-LrTG-Uxthk6tZNrmieDjb4LQzs1H0BlwgeDJtqyc7lFM6foXAncvJDIZ2hr-9KgPiEppGL2GZFI8NOxY-b_1DBP_P-cFuUzfY-kaKbQd6BTY58usm2O_gcBYidptNpkCAIH-dHV0Tdw2NTrNjHY4GAy4weWwPtie8g6knxMHVVylUCRjoJ4IS0S5bXB5FRPXciZs"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white mb-2">Night Use</h3>
+<p class="text-primary font-medium">290mm / 30 Pads</p>
+</div>
+<span class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Overnight</span>
+</div>
+<p class="text-gray-600 dark:text-gray-400 mb-6 line-clamp-2">Extended length and enhanced absorbency for peaceful, worry-free sleep. Wake up feeling fresh.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="inline-flex items-center text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700"><span class="material-icons-outlined text-[16px] mr-1 text-primary">nightlight_round</span> Extra Long</span>
+<span class="inline-flex items-center text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700"><span class="material-icons-outlined text-[16px] mr-1 text-primary">water_drop</span> Max Absorbency</span>
+<span class="inline-flex items-center text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700"><span class="material-icons-outlined text-[16px] mr-1 text-primary">bedtime</span> Secure Sleep</span>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="w-full text-center bg-primary hover:bg-primary-dark text-white py-3 rounded-xl font-medium transition-colors" href="#">Add to Cart</a>
+<div class="flex justify-center gap-4 pt-2">
+<a class="text-sm text-gray-500 hover:text-primary dark:hover:text-primary transition-colors underline underline-offset-4" href="#">Amazon</a>
+<a class="text-sm text-gray-500 hover:text-primary dark:hover:text-primary transition-colors underline underline-offset-4" href="#">Target</a>
+<a class="text-sm text-gray-500 hover:text-primary dark:hover:text-primary transition-colors underline underline-offset-4" href="#">Walmart</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-primary/5 dark:bg-primary/5" id="comparison">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Find Your Fit</h2>
+<p class="text-gray-600 dark:text-gray-400 text-lg">Compare our options to find the perfect protection for your needs.</p>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-3xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50/50 dark:bg-gray-800/50">
+<th class="py-6 px-8 text-gray-400 dark:text-gray-500 font-medium w-1/3">Features</th>
+<th class="py-6 px-8 w-1/3 border-l border-gray-100 dark:border-gray-800">
+<div class="flex flex-col items-center text-center">
+<span class="font-display text-xl text-gray-900 dark:text-white mb-1">Day Use</span>
+<span class="text-sm text-primary">Light to Medium</span>
+</div>
+</th>
+<th class="py-6 px-8 w-1/3 border-l border-gray-100 dark:border-gray-800">
+<div class="flex flex-col items-center text-center">
+<span class="font-display text-xl text-gray-900 dark:text-white mb-1">Night Use</span>
+<span class="text-sm text-primary">Heavy &amp; Overnight</span>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+<tr>
+<td class="py-6 px-8 text-gray-900 dark:text-white font-medium">Length</td>
+<td class="py-6 px-8 text-center text-gray-600 dark:text-gray-400 border-l border-gray-100 dark:border-gray-800">245 mm</td>
+<td class="py-6 px-8 text-center text-gray-600 dark:text-gray-400 border-l border-gray-100 dark:border-gray-800">290 mm</td>
+</tr>
+<tr>
+<td class="py-6 px-8 text-gray-900 dark:text-white font-medium">Best Use Case</td>
+<td class="py-6 px-8 text-center text-gray-600 dark:text-gray-400 border-l border-gray-100 dark:border-gray-800">Daily Activity, Work, School</td>
+<td class="py-6 px-8 text-center text-gray-600 dark:text-gray-400 border-l border-gray-100 dark:border-gray-800">Sleep, Heavy Flow Days</td>
+</tr>
+<tr>
+<td class="py-6 px-8 text-gray-900 dark:text-white font-medium">Protection Level</td>
+<td class="py-6 px-8 text-center border-l border-gray-100 dark:border-gray-800">
+<div class="flex justify-center space-x-1 text-primary">
+<span class="material-icons-outlined text-sm">water_drop</span>
+<span class="material-icons-outlined text-sm">water_drop</span>
+<span class="material-icons-outlined text-sm">water_drop</span>
+<span class="material-icons-outlined text-sm text-gray-300 dark:text-gray-700">water_drop</span>
+</div>
+</td>
+<td class="py-6 px-8 text-center border-l border-gray-100 dark:border-gray-800">
+<div class="flex justify-center space-x-1 text-primary">
+<span class="material-icons-outlined text-sm">water_drop</span>
+<span class="material-icons-outlined text-sm">water_drop</span>
+<span class="material-icons-outlined text-sm">water_drop</span>
+<span class="material-icons-outlined text-sm">water_drop</span>
+<span class="material-icons-outlined text-sm">water_drop</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="py-6 px-8 text-gray-900 dark:text-white font-medium">Profile</td>
+<td class="py-6 px-8 text-center text-gray-600 dark:text-gray-400 border-l border-gray-100 dark:border-gray-800">Ultra-thin</td>
+<td class="py-6 px-8 text-center text-gray-600 dark:text-gray-400 border-l border-gray-100 dark:border-gray-800">Ultra-thin with wider back</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark" id="benefits">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Why Choose Lily</h2>
+<p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">Designed with your comfort and confidence in mind.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-gray-50 dark:bg-surface-dark p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:-translate-y-1 transition-transform duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
+<span class="material-icons-outlined text-3xl">line_weight</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Ultra-thin comfort</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">So thin you'll barely notice it's there, allowing you to move freely without restriction.</p>
+</div>
+<div class="bg-gray-50 dark:bg-surface-dark p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:-translate-y-1 transition-transform duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
+<span class="material-icons-outlined text-3xl">spa</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Soft feel</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Gentle on delicate skin with a cotton-like top layer that prevents irritation.</p>
+</div>
+<div class="bg-gray-50 dark:bg-surface-dark p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:-translate-y-1 transition-transform duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
+<span class="material-icons-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Secure protection</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Advanced core technology locks away moisture quickly to prevent leaks.</p>
+</div>
+<div class="bg-gray-50 dark:bg-surface-dark p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:-translate-y-1 transition-transform duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
+<span class="material-icons-outlined text-3xl">mood</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Everyday confidence</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Feel fresh and elegant, empowered to tackle whatever your day brings.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-gradient-to-br from-primary/5 via-white to-primary/5 dark:from-surface-dark dark:via-background-dark dark:to-surface-dark overflow-hidden" id="story">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-pink-300/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+<div class="relative bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-16 border border-white/20 dark:border-gray-800 shadow-2xl">
+<div class="max-w-3xl mx-auto text-center">
+<span class="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Our Story</span>
+<h2 class="font-display text-3xl md:text-5xl font-semibold mb-8 text-gray-900 dark:text-white leading-tight">Empowering Women Through Comfort</h2>
+<p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        At Lily, we believe that your period shouldn't pause your life. We set out to create a product that combines the delicate beauty of a flower with uncompromising performance. 
+                    </p>
+<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-10">
+                        Our ultra-thin pads are designed to make you feel pretty, confident, and secure—whether you're conquering a busy workday or enjoying a peaceful night's sleep. Because elegance and comfort should be an everyday experience.
+                    </p>
+<div class="flex items-center justify-center space-x-4">
+<div class="h-px w-16 bg-primary/30"></div>
+<span class="font-display text-2xl text-primary italic">Lily</span>
+<div class="h-px w-16 bg-primary/30"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white dark:bg-[#121214] border-t border-gray-100 dark:border-gray-800 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-2">
+<span class="font-display text-3xl font-semibold text-primary mb-6 block">Lily</span>
+<p class="text-gray-500 dark:text-gray-400 max-w-sm mb-6">Feel pretty all day long with ultra-thin comfort and reliable protection designed for you.</p>
+</div>
+<div>
+<h4 class="text-gray-900 dark:text-white font-semibold mb-4">Products</h4>
+<ul class="space-y-3">
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Day Use (245mm)</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Night Use (290mm)</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Where to Buy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-gray-900 dark:text-white font-semibold mb-4">Company</h4>
+<ul class="space-y-3">
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#story">Our Story</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-400 dark:text-gray-500 text-sm">© 2024 Lily Care. All rights reserved.</p>
+<div class="flex space-x-6">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
