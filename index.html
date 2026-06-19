@@ -72,11 +72,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.15), 0 0 15px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15), 0 0 15px rgba(139, 92, 246, 0.1);
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             animation: liquidMorph 8s ease-in-out infinite;
             overflow: hidden;
@@ -161,7 +161,7 @@
     </header>
 
     <!-- Background Canvas Container -->
-    <div class="canvas-container">
+    <div class="canvas-container hidden md:block">
         <canvas id="animation-canvas"></canvas>
         <div class="canvas-overlay-vignette"></div>
         <!-- Logo Overlay at start of animation -->
@@ -170,8 +170,44 @@
         </div>
     </div>
 
+    <!-- Static Hero Section for Mobile/Small Screens -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-pattern block md:hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6 text-gray-900 dark:text-white">
+                    Feel Pretty <br/>
+                    <span class="gradient-text">All Day Long</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 font-light">
+                    Ultra-thin comfort and protection designed for your day and night. Experience the perfect blend of softness and security.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a class="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-medium text-lg transition-all transform hover:scale-105 shadow-lg shadow-primary/25" href="#products">Shop the Collection</a>
+                    <a class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md text-text-light dark:text-text-dark hover:bg-white/60 dark:hover:bg-zinc-800/60 px-8 py-4 rounded-full font-medium text-lg transition-all border border-white/20 dark:border-zinc-800/40 shadow-sm" href="#benefits">Explore Benefits</a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="relative group rounded-2xl overflow-hidden shadow-soft transform transition-transform hover:-translate-y-2 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md p-4 border border-white/20 dark:border-zinc-800/40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <img alt="Lily Day Use Pads packaging featuring bright floral and butterfly design" class="w-full h-auto object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFkE7KCGfyu_5mUsrD3IrZDOy9fjZqy9hpHtBoF5ZP9DOXXk3W_hfnAyI4XqkLWiuRM6aF1X7efOd2506L_JotxKQBb09bHzsDKMUb-EyZDpj22OImtij4AivkP6rqs-Sg6j6CcmlecUjFAF9aZ3v1Rv3hO7Vxc6K5UkzJSZ05vj2wiDwVWGdqcDT5sKeFg-wg0spVu5xkPnZVerV_-pXBb5_2AH50JLHMsm9IP1GSPC9H6Wl3b0gOixle5vw2a8fanl95KUUbNCvp"/>
+                    <div class="absolute bottom-6 left-6 right-6 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="bg-white/90 dark:bg-black/80 backdrop-blur text-sm font-medium px-4 py-2 rounded-full text-gray-900 dark:text-white">Day Protection</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-2xl overflow-hidden shadow-soft transform transition-transform hover:-translate-y-2 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md p-4 border border-white/20 dark:border-zinc-800/40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <img alt="Lily Night Use Pads packaging featuring lavender floral design" class="w-full h-auto object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzWhOsu4f64D-178rrqW4t3Bw5TMy8jXCvBOgoaAW08AcsVp9atH04ZmVMUB3qHFKEWuH6L5kawNaPOor_27scjkc00mSUh62N_Pro24rgDN5S7DA2CAXCgalwW3H61bbSYAWSzwhLzkVTzbMkOyFSWtfbjRbLyfT1TZ8vYbAFJQtU2tJf1CzAE_gH_e1ziS9swpEr0tI-QW6WCwejIjnQo2HvZtKex-B9lnT7I5avvVT-kpynfDt_DKoFfmgQMFz3mhA2K_347e22"/>
+                    <div class="absolute bottom-6 left-6 right-6 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="bg-white/90 dark:bg-black/80 backdrop-blur text-sm font-medium px-4 py-2 rounded-full text-gray-900 dark:text-white">Night Protection</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Scroll Controlled Story Containers -->
-    <main class="scroll-container">
+    <main class="scroll-container hidden md:block">
         <!-- Hero Frame (0% - 18%) -->
         <section class="scroll-section" id="hero-section"></section>
 
@@ -189,7 +225,7 @@
     </main>
 
     <!-- Global Scroll Indicator -->
-    <div id="scroll-hint" class="scroll-indicator-global">
+    <div id="scroll-hint" class="scroll-indicator-global hidden md:flex">
         <div class="mouse-icon">
             <span class="mouse-wheel"></span>
         </div>

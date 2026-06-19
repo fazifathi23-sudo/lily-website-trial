@@ -52,6 +52,15 @@ function formatFrameNum(num) {
 // Preload images
 function preloadImages() {
     return new Promise((resolve) => {
+        if (window.innerWidth < 768) {
+            // On mobile / small screens, bypass frame preloading entirely
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('fade-out');
+            }
+            resolve();
+            return;
+        }
         for (let idx = 0; idx < TOTAL_LOADABLE_FRAMES; idx++) {
             const frameIndex = framesToLoad[idx];
             const img = new Image();
@@ -88,6 +97,7 @@ let lastWidth = 0;
 let lastHeight = 0;
 
 function resizeCanvas() {
+    if (window.innerWidth < 768) return;
     const width = window.innerWidth;
     const height = window.innerHeight;
     
@@ -119,19 +129,40 @@ function renderFrame(index) {
 
     let drawWidth, drawHeight, drawX, drawY;
 
-    if (canvasRatio > imgRatio) {
-        drawWidth = canvasWidth;
-        drawHeight = canvasWidth / imgRatio;
-        drawX = 0;
-        drawY = (canvasHeight - drawHeight) / 2;
-    } else {
-        drawWidth = canvasHeight * imgRatio;
-        drawHeight = canvasHeight;
-        drawX = (canvasWidth - drawWidth) / 2;
-        drawY = 0;
-    }
+    if (canvasRatio < 0.8) {
+        // Mobile portrait view: Blurred cover background + contained foreground
+        
+        // 1. Draw blurred cover background
+        ctx.save();
+        ctx.filter = 'blur(20px) brightness(0.65)';
+        const coverWidth = canvasHeight * imgRatio;
+        const coverHeight = canvasHeight;
+        const coverX = (canvasWidth - coverWidth) / 2;
+        const coverY = 0;
+        ctx.drawImage(img, coverX, coverY, coverWidth, coverHeight);
+        ctx.restore();
 
-    ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+        // 2. Draw contained foreground (sharp, full width visible)
+        const containWidth = canvasWidth;
+        const containHeight = canvasWidth / imgRatio;
+        const containX = 0;
+        const containY = (canvasHeight - containHeight) / 2;
+        ctx.drawImage(img, containX, containY, containWidth, containHeight);
+    } else {
+        // Desktop / Landscape view: Standard cover algorithm
+        if (canvasRatio > imgRatio) {
+            drawWidth = canvasWidth;
+            drawHeight = canvasWidth / imgRatio;
+            drawX = 0;
+            drawY = (canvasHeight - drawHeight) / 2;
+        } else {
+            drawWidth = canvasHeight * imgRatio;
+            drawHeight = canvasHeight;
+            drawX = (canvasWidth - drawWidth) / 2;
+            drawY = 0;
+        }
+        ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+    }
 }
 
 // Loop control variables
@@ -180,6 +211,7 @@ function triggerLogoFadeoutOnScroll(scrollTop) {
 
 // Calculate target frame index based on page scroll
 function updateScrollProgress() {
+    if (window.innerWidth < 768) return;
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     
     // Trigger logo fadeout when scrolling
@@ -214,25 +246,37 @@ function updateScrollProgress() {
 async function init() {
     await preloadImages();
 
-    // Setup initial canvas dimensions
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    if (window.innerWidth >= 768) {
+        // Setup initial canvas dimensions
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-    // Watch scroll position
-    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+        // Watch scroll position
+        window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
-    // If already scrolled down past 50px on load, hide the logo immediately
-    const initialScroll = window.scrollY || document.documentElement.scrollTop;
-    if (initialScroll > 50) {
-        logoFadeoutTriggered = true;
+        // If already scrolled down past 50px on load, hide the logo immediately
+        const initialScroll = window.scrollY || document.documentElement.scrollTop;
+        if (initialScroll > 50) {
+            logoFadeoutTriggered = true;
+            const animationLogo = document.getElementById('animation-logo');
+            if (animationLogo) {
+                animationLogo.classList.add('opacity-0');
+                animationLogo.style.display = 'none';
+            }
+        }
+
+        updateScrollProgress(); // initial run
+    } else {
+        // Hide mobile overlays
         const animationLogo = document.getElementById('animation-logo');
         if (animationLogo) {
-            animationLogo.classList.add('opacity-0');
             animationLogo.style.display = 'none';
         }
+        const scrollHint = document.getElementById('scroll-hint');
+        if (scrollHint) {
+            scrollHint.style.display = 'none';
+        }
     }
-
-    updateScrollProgress(); // initial run
 }
 
 init();
