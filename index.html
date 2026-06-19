@@ -27,8 +27,10 @@
                         primary: "#8B5CF6", // Soft purple
                         "primary-light": "#A78BFA",
                         "primary-dark": "#7C3AED",
-                        "background-light": "#FDFCFE",
-                        "background-dark": "#18181B",
+                        "background-light": "#F5EBF2", // Muted lavender-pink (light)
+                        "background-dark": "#1B1119",  // Muted lavender-pink (dark)
+                        lily: "#EC4899",               // Lily pink color
+                        lavender: "#8B5CF6",           // Lavender purple color
                         surface: {
                             light: "#FFFFFF",
                             dark: "#27272A"
@@ -220,7 +222,7 @@
     </div>
 
     <!-- Static Sections from code.html (Tailwind styled) -->
-    <section class="relative py-24 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl z-10 border-t border-primary/10 shadow-2xl" id="products">
+    <section class="relative max-w-7xl mx-4 lg:mx-auto my-12 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl rounded-[2.5rem] border border-white/20 dark:border-zinc-800/40 shadow-2xl p-8 md:p-16 z-10" id="products">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Our Collection</h2>
@@ -245,7 +247,7 @@
                         <span class="inline-flex items-center text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700"><span class="material-icons-outlined text-[16px] mr-1 text-primary">shield</span> Reliable</span>
                     </div>
                     <div class="flex flex-col space-y-3">
-                        <a class="w-full text-center bg-primary hover:bg-primary-dark text-white py-3 rounded-xl font-medium transition-colors" href="https://souqrima.com/products/lily-ultra-thin-sanitary-pads-for-day" target="_blank" rel="noopener noreferrer">🛒 BUY NOW</a>
+                        <a class="w-full text-center bg-lily hover:bg-pink-600 text-white py-3 rounded-xl font-medium transition-colors shadow-md shadow-pink-500/25" href="https://souqrima.com/products/lily-ultra-thin-sanitary-pads-for-day" target="_blank" rel="noopener noreferrer">🛒 BUY NOW</a>
                     </div>
                 </div>
             <div class="group bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl p-8 border border-white/20 dark:border-zinc-800/40 transition-all hover:shadow-xl hover:shadow-primary/10">
@@ -266,14 +268,14 @@
                         <span class="inline-flex items-center text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700"><span class="material-icons-outlined text-[16px] mr-1 text-primary">bedtime</span> Secure Sleep</span>
                     </div>
                     <div class="flex flex-col space-y-3">
-                        <a class="w-full text-center bg-primary hover:bg-primary-dark text-white py-3 rounded-xl font-medium transition-colors" href="https://souqrima.com/products/lily-ultra-thin-sanitary-pads-for-night" target="_blank" rel="noopener noreferrer">🛒 BUY NOW</a>
+                        <a class="w-full text-center bg-lavender hover:bg-violet-600 text-white py-3 rounded-xl font-medium transition-colors shadow-md shadow-violet-500/25" href="https://souqrima.com/products/lily-ultra-thin-sanitary-pads-for-night" target="_blank" rel="noopener noreferrer">🛒 BUY NOW</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-white/50 dark:bg-zinc-950/50 backdrop-blur-xl z-10 relative border-t border-primary/5" id="comparison">
+    <section class="relative max-w-7xl mx-4 lg:mx-auto my-12 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl rounded-[2.5rem] border border-white/20 dark:border-zinc-800/40 shadow-2xl p-8 md:p-16 z-10" id="comparison">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Find Your Fit</h2>
@@ -342,7 +344,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl z-10 relative border-t border-primary/5" id="benefits">
+    <section class="relative max-w-7xl mx-4 lg:mx-auto my-12 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl rounded-[2.5rem] border border-white/20 dark:border-zinc-800/40 shadow-2xl p-8 md:p-16 z-10" id="benefits">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Why Choose Lily</h2>
@@ -428,7 +430,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white/60 dark:bg-zinc-950/60 backdrop-blur-xl overflow-hidden z-10 relative border-t border-primary/5" id="story">
+    <section class="relative z-10 my-12 overflow-hidden" id="story">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
             <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-pink-300/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -452,7 +454,7 @@
         </div>
     </section>
 
-    <footer class="bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl border-t border-primary/10 pt-16 pb-8 z-10 relative">
+    <footer class="bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border-t border-white/20 dark:border-zinc-800/40 pt-16 pb-8 z-10 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">

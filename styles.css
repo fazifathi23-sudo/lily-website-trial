@@ -1,8 +1,8 @@
 /* Custom Design Tokens & variables */
 :root {
-    --bg-dark: #111113;
-    --bg-card: rgba(24, 24, 27, 0.45);
-    --border-glow: rgba(139, 92, 246, 0.2);
+    --bg-dark: #1D121B;
+    --bg-card: rgba(29, 18, 27, 0.45);
+    --border-glow: rgba(236, 72, 153, 0.2);
     --border-muted: rgba(255, 255, 255, 0.07);
     --primary: #8B5CF6;
     --secondary: #EC4899;
@@ -53,7 +53,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #05070a;
+    background-color: #120A10;
     z-index: 9999;
     display: flex;
     justify-content: center;
