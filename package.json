@@ -1,0 +1,23 @@
+{
+  "name": "lily-website",
+  "version": "1.0.0",
+  "description": "Lily - Feel Pretty All Day Long - Product landing page with Vercel Web Analytics",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fazifathi23-sudo/lily-website-trial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fazifathi23-sudo/lily-website-trial/issues"
+  },
+  "homepage": "https://github.com/fazifathi23-sudo/lily-website-trial#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
