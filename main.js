@@ -6,8 +6,7 @@ if ('history' in window && 'scrollRestoration' in window.history) {
 // Configuration and Constants
 const START_FRAME = 49;
 const END_FRAME = 160;
-const isMobile = window.innerWidth < 768;
-const frameStep = isMobile ? 3 : 1; // Load every 3rd frame on mobile to save memory & bandwidth
+const frameStep = 1; // Load every frame for maximum smoothness on all devices
 
 // Generate the frames to load based on the step size
 const framesToLoad = [];
@@ -21,6 +20,8 @@ let loadedCount = 0;
 // Canvas details (disable alpha channel to optimize canvas blending performance)
 const canvas = document.getElementById('animation-canvas');
 const ctx = canvas.getContext('2d', { alpha: false });
+ctx.imageSmoothingEnabled = true;
+ctx.imageSmoothingQuality = 'high';
 
 // LERP (Linear Interpolation) variables for smooth scrolling
 let currentFrameIndex = 0;
@@ -145,7 +146,7 @@ function startAnimationLoop() {
 }
 
 function animationLoop() {
-    const lerpFactor = 0.15;
+    const lerpFactor = 0.08; // Reduced for much smoother, fluid drift easing
     const diff = targetFrameIndex - currentFrameIndex;
 
     if (Math.abs(diff) > 0.01) {
