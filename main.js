@@ -100,54 +100,34 @@ function resizeCanvas() {
     }
 }
 
-// Render active image on canvas using responsive object-fit logic
+// Render active image on canvas using object-fit: cover logic
 function renderFrame(index) {
     const img = framesArray[index];
     if (!img || !img.complete) return;
+
+    // Optimized: Removed ctx.clearRect because the cover image draw fully overwrites the canvas buffer
 
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
     const imgWidth = img.naturalWidth || img.width;
     const imgHeight = img.naturalHeight || img.height;
 
+    // Cover algorithm
     const canvasRatio = canvasWidth / canvasHeight;
     const imgRatio = imgWidth / imgHeight;
 
     let drawWidth, drawHeight, drawX, drawY;
-    let needsBackground = false;
 
-    // Responsive scaling based on viewport width
-    if (canvasWidth < 1025) {
-        // Mobile & Tablet Portrait Modes: scale to fit width with a premium crop factor
-        // to ensure the product packages (centered side-by-side) are fully visible.
-        const fitScale = canvasWidth < 768 ? 1.1 : 1.3;
-        drawWidth = canvasWidth * fitScale;
-        drawHeight = drawWidth / imgRatio;
-        drawX = (canvasWidth - drawWidth) / 2;
+    if (canvasRatio > imgRatio) {
+        drawWidth = canvasWidth;
+        drawHeight = canvasWidth / imgRatio;
+        drawX = 0;
         drawY = (canvasHeight - drawHeight) / 2;
-        needsBackground = true;
     } else {
-        // Desktop landscape views: standard cover algorithm
-        if (canvasRatio > imgRatio) {
-            drawWidth = canvasWidth;
-            drawHeight = canvasWidth / imgRatio;
-            drawX = 0;
-            drawY = (canvasHeight - drawHeight) / 2;
-        } else {
-            drawWidth = canvasHeight * imgRatio;
-            drawHeight = canvasHeight;
-            drawX = (canvasWidth - drawWidth) / 2;
-            drawY = 0;
-        }
-    }
-
-    // Fill background with a matching gradient on narrow viewports to blend letterbox margins
-    if (needsBackground) {
-        const bgGradient = ctx.createLinearGradient(0, 0, 0, canvasHeight);
-        bgGradient.addColorStop(0, '#FAF7FC'); // Light pastel pink/purple at top of screen
-        bgGradient.addColorStop(1, '#D5CDE3'); // Soft lavender/violet reflection at bottom of screen
-        ctx.fillStyle = bgGradient;
-        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        drawWidth = canvasHeight * imgRatio;
+        drawHeight = canvasHeight;
+        drawX = (canvasWidth - drawWidth) / 2;
+        drawY = 0;
     }
 
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
