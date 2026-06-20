@@ -9,7 +9,7 @@
     --text-primary: #f8fafc;
     --text-secondary: #a1a1aa;
     --text-muted: #71717a;
-    --font-heading: 'Playfair Display', 'Outfit', sans-serif;
+    --font-heading: 'Big Shoulders Display', 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
     --glass-blur: blur(16px);
 }
@@ -19,6 +19,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Big Shoulders Display — all-caps heading style (Bourton alternative) */
+.font-display,
+h1.font-display, h2.font-display, h3.font-display,
+h4.font-display, h5.font-display, h6.font-display {
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-weight: 800;
 }
 
 html {
@@ -96,8 +105,9 @@ body {
 .preloader-logo {
     font-family: var(--font-heading);
     font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: 0.5rem;
+    font-weight: 900;
+    letter-spacing: 0.6rem;
+    text-transform: uppercase;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -575,17 +585,19 @@ body {
 .title-main {
     font-family: var(--font-heading);
     font-size: 3rem;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .title-sub {
     font-family: var(--font-heading);
     font-size: 2.2rem;
-    font-weight: 700;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 
 .description-text {
