@@ -325,6 +325,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Mobile header: transparent over hero, opaque when scrolled past
+(function initMobileHeader() {
+    if (window.innerWidth >= 768) return;
+
+    const header = document.getElementById('main-header');
+    if (!header) return;
+
+    function updateHeaderOnScroll() {
+        const heroHeight = window.innerHeight;
+        if (window.scrollY > heroHeight * 0.85) {
+            // Scrolled past the hero — add background for readability
+            header.classList.add('bg-white/80', 'dark:bg-zinc-950/80', 'border-primary/10');
+            header.classList.remove('bg-transparent', 'border-transparent');
+        } else {
+            // Still over the hero — keep transparent
+            header.classList.remove('bg-white/80', 'dark:bg-zinc-950/80', 'border-primary/10');
+            header.classList.add('bg-transparent', 'border-transparent');
+        }
+    }
+
+    window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+    updateHeaderOnScroll(); // run on load
+})();
+
 init();
 
 // =============================================================
