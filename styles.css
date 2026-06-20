@@ -10,7 +10,7 @@
     --text-secondary: #a1a1aa;
     --text-muted: #71717a;
     --font-heading: 'Big Shoulders Display', 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-body: 'Great Vibes', 'Inter', cursive;
     --glass-blur: blur(16px);
 }
 
@@ -46,7 +46,7 @@ body {
     font-family: var(--font-body);
     overflow-x: hidden;
     overflow-y: scroll;                        /* Always show scrollbar — prevents layout shift */
-    line-height: 1.6;
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-overflow-scrolling: touch;         /* iOS momentum scrolling */
