@@ -222,7 +222,11 @@
     </div>
 
     <!-- Static Sections from code.html (Tailwind styled) -->
-    <section class="relative py-20 bg-background-light dark:bg-background-dark border-t border-primary/10 z-10" id="products">
+    <section class="relative py-20 glass-section z-10 overflow-hidden" id="products">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-1/4 left-[10%] w-96 h-96 bg-primary/10 rounded-full filter blur-3xl opacity-60 animate-blob"></div>
+            <div class="absolute bottom-1/4 right-[10%] w-96 h-96 bg-lily/10 rounded-full filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Our Collection</h2>
@@ -275,7 +279,11 @@
         </div>
     </section>
 
-    <section class="relative py-20 bg-background-light dark:bg-background-dark border-t border-primary/10 z-10" id="comparison">
+    <section class="relative py-20 glass-section z-10 overflow-hidden" id="comparison">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-lily/10 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
+            <div class="absolute bottom-1/3 left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+        </div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Find Your Fit</h2>
@@ -344,7 +352,11 @@
         </div>
     </section>
 
-    <section class="relative py-20 bg-background-light dark:bg-background-dark border-t border-primary/10 z-10" id="benefits">
+    <section class="relative py-20 glass-section z-10 overflow-hidden" id="benefits">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-1/4 left-1/4 w-[30rem] h-[30rem] bg-primary/10 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-lily/10 rounded-full filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Why Choose Lily</h2>
@@ -430,10 +442,10 @@
         </div>
     </section>
 
-    <section class="relative py-20 bg-background-light dark:bg-background-dark border-t border-primary/10 z-10 overflow-hidden" id="story">
+    <section class="relative py-20 glass-section z-10 overflow-hidden" id="story">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-pink-300/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 pointer-events-none -z-10 animate-blob"></div>
+            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-pink-300/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 pointer-events-none -z-10 animate-blob animation-delay-2000"></div>
             <div class="max-w-3xl mx-auto text-center">
                 <span class="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Our Story</span>
                 <h2 class="font-display text-3xl md:text-5xl font-semibold mb-8 text-gray-900 dark:text-white leading-tight">Empowering Women Through Comfort</h2>
@@ -452,7 +464,10 @@
         </div>
     </section>
 
-    <footer class="bg-background-light dark:bg-background-dark border-t border-primary/10 pt-16 pb-8 z-10 relative">
+    <footer class="glass-section pt-16 pb-8 z-10 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-lily/5 rounded-full filter blur-3xl animate-blob"></div>
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
