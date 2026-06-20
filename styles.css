@@ -24,11 +24,22 @@
 
 body {
     background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.04) 0%, transparent 70%);
+    animation: bgShift 20s ease-in-out infinite alternate;
     color: var(--text-primary);
     font-family: var(--font-body);
     overflow-x: hidden;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+}
+
+@keyframes bgShift {
+    0%   { background-position: 0% 0%, 100% 100%, 50% 50%; }
+    50%  { background-position: 10% 15%, 90% 85%, 55% 45%; }
+    100% { background-position: 5% 10%, 95% 90%, 52% 48%; }
 }
 
 /* Scrollbar styling */
@@ -750,6 +761,100 @@ body {
 .reveal-on-scroll.revealed {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ===================================================
+   FLOATING PARTICLE SYSTEM — Lily, Lavender & Butterflies
+   Glassmorphism-inspired dreamy background elements
+   =================================================== */
+
+/* Fixed layer that sits behind all content */
+#floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Base particle element */
+.particle {
+    position: absolute;
+    will-change: transform, opacity;
+    opacity: 0;
+    transform-origin: center center;
+    filter: blur(0.5px);
+}
+
+/* ---- Drift Keyframes ---- */
+/* Each variant has a slightly different trajectory for organic feel */
+@keyframes driftA {
+    0%   { transform: translate(0, 0) rotate(0deg) scale(1);   opacity: 0; }
+    8%   { opacity: 0.55; }
+    92%  { opacity: 0.45; }
+    100% { transform: translate(-120px, -110vh) rotate(330deg) scale(0.7); opacity: 0; }
+}
+@keyframes driftB {
+    0%   { transform: translate(0, 0) rotate(0deg) scale(1);   opacity: 0; }
+    10%  { opacity: 0.5; }
+    90%  { opacity: 0.4; }
+    100% { transform: translate(100px, -105vh) rotate(-280deg) scale(0.65); opacity: 0; }
+}
+@keyframes driftC {
+    0%   { transform: translate(0, 0) rotate(0deg) scale(1);   opacity: 0; }
+    12%  { opacity: 0.6; }
+    88%  { opacity: 0.4; }
+    100% { transform: translate(-60px, -115vh) rotate(400deg) scale(0.8); opacity: 0; }
+}
+@keyframes driftD {
+    0%   { transform: translate(0, 0) rotate(10deg) scale(1);   opacity: 0; }
+    9%   { opacity: 0.5; }
+    91%  { opacity: 0.35; }
+    100% { transform: translate(80px, -108vh) rotate(-350deg) scale(0.6); opacity: 0; }
+}
+@keyframes driftE {
+    0%   { transform: translate(0, 0) rotate(-5deg) scale(1);   opacity: 0; }
+    11%  { opacity: 0.55; }
+    89%  { opacity: 0.45; }
+    100% { transform: translate(-90px, -112vh) rotate(300deg) scale(0.75); opacity: 0; }
+}
+
+/* Butterfly wing-flap keyframe */
+@keyframes wingFlap {
+    0%,  100% { transform: scaleX(1);   }
+    50%        { transform: scaleX(0.6); }
+}
+
+/* Shimmer for petals */
+@keyframes shimmer {
+    0%,  100% { filter: blur(0.5px) brightness(1);   }
+    50%        { filter: blur(0.5px) brightness(1.25); }
+}
+
+/* ---- Particle type assignments ---- */
+.particle.lily-petal svg {
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.particle.butterfly svg {
+    animation: wingFlap 0.7s ease-in-out infinite alternate;
+}
+
+/* ---- Drift animation assignments (assigned via inline style) ---- */
+.drift-a { animation-name: driftA; }
+.drift-b { animation-name: driftB; }
+.drift-c { animation-name: driftC; }
+.drift-d { animation-name: driftD; }
+.drift-e { animation-name: driftE; }
+
+/* Disable all particle animations on mobile for performance */
+@media (max-width: 768px) {
+    #floating-particles {
+        display: none;
+    }
 }
 
 /* Footer Font Color Overrides */

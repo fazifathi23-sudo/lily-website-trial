@@ -326,3 +326,131 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 init();
+
+// =============================================================
+// FLOATING PARTICLE SYSTEM
+// Dreamy glassmorphism background: lily petals, lavender blossoms, butterflies
+// Desktop only — hidden on mobile via CSS
+// =============================================================
+
+(function initParticles() {
+    if (window.innerWidth < 768) return; // Desktop only
+
+    const container = document.getElementById('floating-particles');
+    if (!container) return;
+
+    // SVG templates for each particle type
+    const svgTemplates = {
+        lilyPetal: (color) => `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="100%" height="100%">
+                <g opacity="0.85">
+                    <ellipse cx="20" cy="12" rx="6" ry="12" fill="${color}" opacity="0.7" transform="rotate(0,20,20)"/>
+                    <ellipse cx="20" cy="12" rx="6" ry="12" fill="${color}" opacity="0.7" transform="rotate(72,20,20)"/>
+                    <ellipse cx="20" cy="12" rx="6" ry="12" fill="${color}" opacity="0.7" transform="rotate(144,20,20)"/>
+                    <ellipse cx="20" cy="12" rx="6" ry="12" fill="${color}" opacity="0.7" transform="rotate(216,20,20)"/>
+                    <ellipse cx="20" cy="12" rx="6" ry="12" fill="${color}" opacity="0.7" transform="rotate(288,20,20)"/>
+                    <circle cx="20" cy="20" r="4" fill="${color}" opacity="0.9"/>
+                </g>
+            </svg>`,
+
+        lavenderBlossom: (color) => `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 40" width="100%" height="100%">
+                <g opacity="0.8">
+                    <ellipse cx="18" cy="8" rx="4" ry="8" fill="${color}" opacity="0.75"/>
+                    <ellipse cx="12" cy="14" rx="4" ry="8" fill="${color}" opacity="0.7" transform="rotate(-25,12,14)"/>
+                    <ellipse cx="24" cy="14" rx="4" ry="8" fill="${color}" opacity="0.7" transform="rotate(25,24,14)"/>
+                    <ellipse cx="14" cy="22" rx="3.5" ry="7" fill="${color}" opacity="0.65" transform="rotate(-15,14,22)"/>
+                    <ellipse cx="22" cy="22" rx="3.5" ry="7" fill="${color}" opacity="0.65" transform="rotate(15,22,22)"/>
+                    <line x1="18" y1="38" x2="18" y2="16" stroke="${color}" stroke-width="2" opacity="0.6"/>
+                </g>
+            </svg>`,
+
+        butterfly: (color, color2) => `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 30" width="100%" height="100%">
+                <g opacity="0.8">
+                    <!-- Upper wings -->
+                    <path d="M24 15 C 18 5, 2 2, 4 12 C 6 20, 18 18, 24 15 Z" fill="${color}" opacity="0.75"/>
+                    <path d="M24 15 C 30 5, 46 2, 44 12 C 42 20, 30 18, 24 15 Z" fill="${color}" opacity="0.75"/>
+                    <!-- Lower wings -->
+                    <path d="M24 15 C 16 16, 4 22, 8 28 C 12 32, 20 24, 24 15 Z" fill="${color2}" opacity="0.65"/>
+                    <path d="M24 15 C 32 16, 44 22, 40 28 C 36 32, 28 24, 24 15 Z" fill="${color2}" opacity="0.65"/>
+                    <!-- Body -->
+                    <ellipse cx="24" cy="15" rx="2" ry="7" fill="${color}" opacity="0.9"/>
+                </g>
+            </svg>`
+    };
+
+    const driftClasses = ['drift-a', 'drift-b', 'drift-c', 'drift-d', 'drift-e'];
+
+    // Color palettes
+    const lilyColors   = ['#E879C0', '#D946A8', '#EC4899', '#F472B6', '#C084FC'];
+    const lavColors    = ['#A78BFA', '#8B5CF6', '#C4B5FD', '#7C3AED', '#DDD6FE'];
+    const butterflyPrimary   = ['#C084FC', '#A78BFA', '#E879C0', '#F9A8D4'];
+    const butterflySecondary = ['#F9A8D4', '#FDE68A', '#FBCFE8', '#E9D5FF'];
+
+    // Particle pool config
+    const config = [
+        { type: 'lilyPetal',       count: 14, sizeRange: [18, 36] },
+        { type: 'lavenderBlossom', count: 10, sizeRange: [14, 28] },
+        { type: 'butterfly',       count: 8,  sizeRange: [24, 42] }
+    ];
+
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    function createParticle(typeConfig) {
+        const el = document.createElement('div');
+        const size = rand(typeConfig.sizeRange[0], typeConfig.sizeRange[1]);
+        const driftClass = pick(driftClasses);
+
+        // Random start position across bottom of viewport
+        const startX = rand(-5, 105); // % of viewport width
+        const startY = rand(80, 115); // % below the visible area (spawn from below)
+
+        el.className = `particle ${typeConfig.type} ${driftClass}`;
+        el.style.cssText = `
+            left: ${startX}vw;
+            top: ${startY}vh;
+            width: ${size}px;
+            height: ${size}px;
+            animation-duration: ${rand(12, 28)}s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-delay: ${rand(0, 20)}s;
+            animation-fill-mode: both;
+        `;
+
+        // Generate SVG
+        let svgContent = '';
+        if (typeConfig.type === 'lilyPetal') {
+            svgContent = svgTemplates.lilyPetal(pick(lilyColors));
+        } else if (typeConfig.type === 'lavenderBlossom') {
+            svgContent = svgTemplates.lavenderBlossom(pick(lavColors));
+        } else if (typeConfig.type === 'butterfly') {
+            svgContent = svgTemplates.butterfly(pick(butterflyPrimary), pick(butterflySecondary));
+        }
+
+        el.innerHTML = svgContent;
+        container.appendChild(el);
+    }
+
+    // Spawn all particles
+    config.forEach(typeConfig => {
+        for (let i = 0; i < typeConfig.count; i++) {
+            createParticle(typeConfig);
+        }
+    });
+
+    // Re-spawn particles on window resize (desktop only)
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth < 768) {
+                container.style.display = 'none';
+            } else {
+                container.style.display = '';
+            }
+        }, 300);
+    });
+})();
