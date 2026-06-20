@@ -289,6 +289,35 @@ const revealObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
+// FAQ Toggle function
+window.toggleFaq = function(btn) {
+    const parent = btn.parentElement;
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('.material-icons-outlined:last-child');
+    
+    const isOpen = parent.classList.contains('active');
+    
+    // Close other FAQ items
+    document.querySelectorAll('.faq-accordion > div').forEach(item => {
+        if (item !== parent && item.classList.contains('active')) {
+            item.classList.remove('active');
+            item.querySelector('.faq-content').style.maxHeight = '0px';
+            const itemIcon = item.querySelector('.material-icons-outlined:last-child');
+            if (itemIcon) itemIcon.style.transform = 'rotate(0deg)';
+        }
+    });
+
+    if (isOpen) {
+        parent.classList.remove('active');
+        content.style.maxHeight = '0px';
+        if (icon) icon.style.transform = 'rotate(0deg)';
+    } else {
+        parent.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        if (icon) icon.style.transform = 'rotate(180deg)';
+    }
+};
+
 // Initialize when DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal-on-scroll').forEach(el => {

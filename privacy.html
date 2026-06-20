@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Lily</title>
+    <meta name="description" content="Privacy Policy for Lily sanitary pads. Your privacy is important to us.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B5CF6", // Soft purple
+                        "primary-light": "#A78BFA",
+                        "primary-dark": "#7C3AED",
+                        "background-light": "#F5EBF2", // Muted lavender-pink (light)
+                        "background-dark": "#1B1119",  // Muted lavender-pink (dark)
+                        lily: "#EC4899",               // Lily pink color
+                        lavender: "#8B5CF6",           // Lavender purple color
+                        surface: {
+                            light: "#FFFFFF",
+                            dark: "#27272A"
+                        },
+                        text: {
+                            light: "#3F3F46",
+                            dark: "#E4E4E7"
+                        }
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                    },
+                    boxShadow: {
+                        soft: "0 10px 40px -10px rgba(139, 92, 246, 0.1)",
+                    }
+                },
+            },
+        };
+    </script>
+
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .logo-liquid-container {
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15), 0 0 15px rgba(139, 92, 246, 0.1);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: liquidMorph 8s ease-in-out infinite;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+        .dark .logo-liquid-container {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 255, 255, 0.05);
+        }
+        .logo-liquid-container img {
+            height: 2.2rem;
+            width: 2.2rem;
+            object-fit: contain;
+        }
+        @keyframes liquidMorph {
+            0%, 100% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+            50% {
+                border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans antialiased selection:bg-primary selection:text-white transition-colors duration-300">
+    
+    <!-- Navigation Header -->
+    <header class="fixed w-full top-0 left-0 z-50 bg-white/30 dark:bg-zinc-950/30 backdrop-blur-md border-b border-primary/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a class="flex-shrink-0 flex items-center" href="index.html">
+                    <div class="logo-liquid-container">
+                        <img src="IMAGES/header-logo.png" alt="Lily Logo">
+                    </div>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="index.html#products">Products</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="index.html#comparison">Compare</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="index.html#benefits">Benefits</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="index.html#story">Our Story</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="index.html#faq">FAQ</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="index.html#contact">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-white/20 dark:hover:bg-zinc-800/40 transition-colors text-text-light dark:text-text-dark" onclick="document.documentElement.classList.toggle('dark')">
+                        <span class="material-icons-outlined dark:hidden">dark_mode</span>
+                        <span class="material-icons-outlined hidden dark:block">light_mode</span>
+                    </button>
+                    <a class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full font-medium text-sm transition-all hover:scale-105 shadow-md shadow-primary/25" href="index.html#products">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative pt-32 pb-20 overflow-hidden z-10">
+        <!-- Background Blobs -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-1/4 left-1/4 w-[30rem] h-[30rem] bg-primary/10 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-lily/10 rounded-full filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20 dark:border-zinc-800/40 shadow-soft">
+                <h1 class="font-display text-4xl font-semibold mb-2 text-gray-900 dark:text-white">Privacy Policy</h1>
+                <p class="text-xs text-primary font-medium uppercase tracking-wider mb-8">Last Updated: June 20, 2026</p>
+                
+                <div class="space-y-8 text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
+                    <p class="text-base">
+                        Welcome to Lily. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you visit our website.
+                    </p>
+
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">1. Information We Collect</h2>
+                        <p class="mb-4">We may collect the following types of information:</p>
+                        
+                        <div class="space-y-4 pl-4 border-l-2 border-primary/20">
+                            <div>
+                                <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">Personal Information</h3>
+                                <p class="mb-2">When you contact us, subscribe to our newsletter, or make a purchase through our website, we may collect:</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Name</li>
+                                    <li>Email address</li>
+                                    <li>Phone number</li>
+                                    <li>Shipping and billing address</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">Non-Personal Information</h3>
+                                <p class="mb-2">We may automatically collect:</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Browser type</li>
+                                    <li>Device information</li>
+                                    <li>IP address</li>
+                                    <li>Pages visited</li>
+                                    <li>Website usage statistics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">2. How We Use Your Information</h2>
+                        <p class="mb-2">We use the information collected to:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Process and fulfill orders</li>
+                            <li>Respond to customer inquiries</li>
+                            <li>Improve our website and services</li>
+                            <li>Send order updates and customer support messages</li>
+                            <li>Provide promotional offers and marketing communications (only with your consent)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">3. Cookies</h2>
+                        <p class="mb-2">Our website may use cookies and similar technologies to improve your browsing experience, analyze website traffic, and personalize content.</p>
+                        <p>You can choose to disable cookies through your browser settings; however, some website features may not function properly.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">4. Third-Party Services</h2>
+                        <p class="mb-2">We may use trusted third-party services for:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Payment processing</li>
+                            <li>Website analytics</li>
+                            <li>Email marketing</li>
+                            <li>Order fulfillment</li>
+                        </ul>
+                        <p class="mt-2">These providers have access only to the information necessary to perform their services and are required to protect your data.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">5. Data Security</h2>
+                        <p class="mb-2">We implement reasonable security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+                        <p>While we strive to protect your information, no method of transmission over the internet is completely secure.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">6. Your Rights</h2>
+                        <p class="mb-2">You have the right to:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Access your personal information</li>
+                            <li>Request correction of inaccurate information</li>
+                            <li>Request deletion of your personal data</li>
+                            <li>Opt out of marketing communications at any time</li>
+                        </ul>
+                        <p class="mt-2">To exercise these rights, please contact us using the information on our contact form or contact details.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">7. Children's Privacy</h2>
+                        <p>Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">8. Changes to This Privacy Policy</h2>
+                        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-section pt-16 pb-8 z-10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="font-display text-3xl font-semibold text-primary mb-6 block">Lily</span>
+                    <p class="text-gray-500 dark:text-gray-400 max-w-sm mb-6">Feel pretty all day long with ultra-thin comfort and reliable protection designed for you.</p>
+                </div>
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-semibold mb-4">Products</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="index.html#products">Day Use (245mm)</a></li>
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="index.html#products">Night Use (290mm)</a></li>
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="index.html#products">Where to Buy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="index.html#story">Our Story</a></li>
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="index.html#contact">Contact Us</a></li>
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 dark:text-gray-500 text-sm">© 2024 Lily Care. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

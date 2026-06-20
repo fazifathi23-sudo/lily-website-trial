@@ -106,6 +106,7 @@
 <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#comparison">Compare</a>
 <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#benefits">Benefits</a>
 <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#story">Our Story</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#faq">FAQ</a>
 <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#contact">Contact</a>
 </div>
 <div class="hidden md:flex items-center space-x-4">
@@ -373,7 +374,175 @@
 </div>
 </div>
 </div>
-</div>
+</section>
+
+<!-- FAQ Section -->
+<section class="relative py-20 glass-section z-10 overflow-hidden reveal-on-scroll" id="faq">
+    <!-- Background Blobs and Floral Accents -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="absolute top-1/3 left-1/4 w-80 h-80 bg-lily/5 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary/5 rounded-full filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+        
+        <!-- Floral outline / Butterfly SVGs for themed decorations -->
+        <div class="absolute top-10 right-[15%] w-24 h-24 opacity-10 dark:opacity-20">
+            <svg viewBox="0 0 24 24" class="w-full h-full fill-primary">
+                <!-- Butterfly outline -->
+                <path d="M12 10C11.5 6, 8 3, 5 3C2.5 3, 1 5, 2.5 9C3.5 11, 7 12, 12 12C17 12, 20.5 11, 21.5 9C23 5, 21.5 3, 19 3C16 3, 12.5 6, 12 10 Z" />
+                <path d="M12 14C11.5 17, 9 21, 6 21C4 21, 3.5 19, 4.5 17C5.5 15, 8.5 14, 12 14C15.5 14, 18.5 15, 19.5 17C20.5 19, 20 21, 18 21C15 21, 12.5 17, 12 14 Z" />
+            </svg>
+        </div>
+        <div class="absolute bottom-10 left-[15%] w-24 h-24 opacity-10 dark:opacity-20">
+            <svg viewBox="0 0 24 24" class="w-full h-full fill-lily">
+                <!-- Flower outline -->
+                <circle cx="12" cy="12" r="3" />
+                <path d="M12 2 C10 6, 6 10, 12 12 C18 10, 14 6, 12 2 Z" />
+                <path d="M12 22 C10 18, 6 14, 12 12 C18 14, 14 18, 12 22 Z" />
+                <path d="M2 12 C6 10, 10 6, 12 12 C10 18, 6 14, 2 12 Z" />
+                <path d="M22 12 C18 10, 14 6, 12 12 C14 18, 18 14, 22 12 Z" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-16">
+            <span class="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">FAQ</span>
+            <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">Frequently Asked Questions</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                Everything you need to know about Lily sanitary pads.
+            </p>
+        </div>
+
+        <!-- FAQ Accordion Container -->
+        <div class="faq-accordion space-y-4 max-w-3xl mx-auto">
+            <!-- Item 1 -->
+            <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/40 shadow-soft overflow-hidden transition-all duration-300">
+                <button class="w-full flex justify-between items-center text-left px-6 py-5 font-semibold text-gray-900 dark:text-white focus:outline-none transition-colors hover:bg-primary/[0.03]" onclick="toggleFaq(this)">
+                    <span class="pr-4 flex items-center gap-2">
+                        <span class="text-primary material-icons-outlined text-base">help_outline</span>
+                        Are Lily sanitary pads suitable for daily use?
+                    </span>
+                    <span class="material-icons-outlined transition-transform duration-300 shrink-0 text-primary">expand_more</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-5 pt-1 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/40">
+                        Yes. Lily Day Use pads are designed for everyday comfort with an ultra-thin, breathable design that helps you stay fresh and confident throughout the day.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/40 shadow-soft overflow-hidden transition-all duration-300">
+                <button class="w-full flex justify-between items-center text-left px-6 py-5 font-semibold text-gray-900 dark:text-white focus:outline-none transition-colors hover:bg-primary/[0.03]" onclick="toggleFaq(this)">
+                    <span class="pr-4 flex items-center gap-2">
+                        <span class="text-primary material-icons-outlined text-base">help_outline</span>
+                        What is the difference between Lily Day Use and Lily Night Use?
+                    </span>
+                    <span class="material-icons-outlined transition-transform duration-300 shrink-0 text-primary">expand_more</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-5 pt-1 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/40">
+                        Lily Day Use pads are lightweight and ideal for daily activities, while Lily Night Use pads are longer and provide enhanced protection for overnight comfort and leak prevention.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/40 shadow-soft overflow-hidden transition-all duration-300">
+                <button class="w-full flex justify-between items-center text-left px-6 py-5 font-semibold text-gray-900 dark:text-white focus:outline-none transition-colors hover:bg-primary/[0.03]" onclick="toggleFaq(this)">
+                    <span class="pr-4 flex items-center gap-2">
+                        <span class="text-primary material-icons-outlined text-base">help_outline</span>
+                        How many layers of protection do Lily pads have?
+                    </span>
+                    <span class="material-icons-outlined transition-transform duration-300 shrink-0 text-primary">expand_more</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-5 pt-1 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/40">
+                        Lily pads feature an advanced 8-layer protection system designed to provide comfort, fast absorption, odor control, breathability, and reliable leak protection.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/40 shadow-soft overflow-hidden transition-all duration-300">
+                <button class="w-full flex justify-between items-center text-left px-6 py-5 font-semibold text-gray-900 dark:text-white focus:outline-none transition-colors hover:bg-primary/[0.03]" onclick="toggleFaq(this)">
+                    <span class="pr-4 flex items-center gap-2">
+                        <span class="text-primary material-icons-outlined text-base">help_outline</span>
+                        Are Lily pads soft and comfortable?
+                    </span>
+                    <span class="material-icons-outlined transition-transform duration-300 shrink-0 text-primary">expand_more</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-5 pt-1 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/40">
+                        Yes. Lily pads are made with a soft cotton-like surface for gentle comfort and instant absorption, helping you feel comfortable all day and night.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/40 shadow-soft overflow-hidden transition-all duration-300">
+                <button class="w-full flex justify-between items-center text-left px-6 py-5 font-semibold text-gray-900 dark:text-white focus:outline-none transition-colors hover:bg-primary/[0.03]" onclick="toggleFaq(this)">
+                    <span class="pr-4 flex items-center gap-2">
+                        <span class="text-primary material-icons-outlined text-base">help_outline</span>
+                        Do Lily pads help control odor?
+                    </span>
+                    <span class="material-icons-outlined transition-transform duration-300 shrink-0 text-primary">expand_more</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-5 pt-1 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/40">
+                        Yes. Lily pads include a patented anion strip that helps neutralize odors while providing additional freshness and antibacterial benefits.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/40 shadow-soft overflow-hidden transition-all duration-300">
+                <button class="w-full flex justify-between items-center text-left px-6 py-5 font-semibold text-gray-900 dark:text-white focus:outline-none transition-colors hover:bg-primary/[0.03]" onclick="toggleFaq(this)">
+                    <span class="pr-4 flex items-center gap-2">
+                        <span class="text-primary material-icons-outlined text-base">help_outline</span>
+                        Are Lily pads breathable?
+                    </span>
+                    <span class="material-icons-outlined transition-transform duration-300 shrink-0 text-primary">expand_more</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-5 pt-1 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/40">
+                        Absolutely. The breathable water-resistant bottom layer allows air circulation, helping reduce heat and moisture for a fresh feeling.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/40 shadow-soft overflow-hidden transition-all duration-300">
+                <button class="w-full flex justify-between items-center text-left px-6 py-5 font-semibold text-gray-900 dark:text-white focus:outline-none transition-colors hover:bg-primary/[0.03]" onclick="toggleFaq(this)">
+                    <span class="pr-4 flex items-center gap-2">
+                        <span class="text-primary material-icons-outlined text-base">help_outline</span>
+                        How do I choose the right Lily pad?
+                    </span>
+                    <span class="material-icons-outlined transition-transform duration-300 shrink-0 text-primary">expand_more</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-5 pt-1 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/40">
+                        Choose Lily Day Use (245mm) for everyday protection and Lily Night Use (290mm) for extra coverage and overnight protection.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/40 shadow-soft overflow-hidden transition-all duration-300">
+                <button class="w-full flex justify-between items-center text-left px-6 py-5 font-semibold text-gray-900 dark:text-white focus:outline-none transition-colors hover:bg-primary/[0.03]" onclick="toggleFaq(this)">
+                    <span class="pr-4 flex items-center gap-2">
+                        <span class="text-primary material-icons-outlined text-base">help_outline</span>
+                        Where can I purchase Lily products?
+                    </span>
+                    <span class="material-icons-outlined transition-transform duration-300 shrink-0 text-primary">expand_more</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-5 pt-1 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800/40">
+                        You can purchase Lily sanitary pads through our authorized retail partners and online stores. Visit our shop page for the latest purchasing options.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Contact Section -->
@@ -526,7 +695,7 @@
 <ul class="space-y-3">
 <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#story">Our Story</a></li>
 <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact Us</a></li>
-<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a></li>
 </ul>
 </div>
 </div>
