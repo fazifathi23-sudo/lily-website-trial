@@ -279,4 +279,21 @@ async function init() {
     }
 }
 
+// Scroll Reveal Observer
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target); // Trigger only once
+        }
+    });
+}, { threshold: 0.1 });
+
+// Initialize when DOM content is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        revealObserver.observe(el);
+    });
+});
+
 init();

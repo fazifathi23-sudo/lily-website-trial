@@ -106,6 +106,7 @@
 <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#comparison">Compare</a>
 <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#benefits">Benefits</a>
 <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#story">Our Story</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="#contact">Contact</a>
 </div>
 <div class="hidden md:flex items-center space-x-4">
 <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-text-light dark:text-text-dark" onclick="document.documentElement.classList.toggle('dark')">
@@ -374,6 +375,138 @@
 </div>
 </div>
 </section>
+
+<!-- Contact Section -->
+<section class="relative py-20 glass-section z-10 overflow-hidden reveal-on-scroll" id="contact">
+    <!-- Background Blobs -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="absolute top-1/4 right-[10%] w-96 h-96 bg-primary/10 rounded-full filter blur-3xl opacity-60 animate-blob"></div>
+        <div class="absolute bottom-1/4 left-[10%] w-96 h-96 bg-lily/10 rounded-full filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-16">
+            <span class="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Get in Touch</span>
+            <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4 text-gray-900 dark:text-white">We'd love to hear from you</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                Whether you have questions about our products, need assistance, or would like to share your feedback, our team is here to help. Reach out to us anytime and we'll get back to you as soon as possible.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch max-w-6xl mx-auto">
+            <!-- Contact Form Card -->
+            <div class="lg:col-span-7 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl p-8 border border-white/20 dark:border-zinc-800/40 shadow-soft flex flex-col justify-between">
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-950/50 border border-gray-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary text-gray-900 dark:text-white placeholder-gray-400 text-sm transition-colors" placeholder="Jane Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-950/50 border border-gray-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary text-gray-900 dark:text-white placeholder-gray-400 text-sm transition-colors" placeholder="jane@example.com">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-950/50 border border-gray-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary text-gray-900 dark:text-white placeholder-gray-400 text-sm transition-colors" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-950/50 border border-gray-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary text-gray-900 dark:text-white placeholder-gray-400 text-sm transition-colors" placeholder="How can we help?">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-white/50 dark:bg-zinc-950/50 border border-gray-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary text-gray-900 dark:text-white placeholder-gray-400 text-sm transition-colors" placeholder="Your message here..."></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-primary to-lily hover:from-primary-dark hover:to-pink-600 text-white py-4 rounded-xl font-medium transition-all hover:scale-[1.02] shadow-md shadow-primary/20 flex justify-center items-center gap-2">
+                            <span class="material-icons-outlined text-sm">send</span> Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Info/Illustration Card -->
+            <div class="lg:col-span-5 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl p-8 border border-white/20 dark:border-zinc-800/40 shadow-soft flex flex-col justify-between relative overflow-hidden">
+                <!-- Subtle Floral Accent Drawing in the background -->
+                <div class="absolute bottom-0 right-0 w-48 h-48 opacity-10 dark:opacity-20 pointer-events-none -mr-8 -mb-8">
+                    <svg viewBox="0 0 100 100" class="w-full h-full fill-none stroke-primary" stroke-width="1.5">
+                        <!-- Artistic Lily outline -->
+                        <path d="M50 95 C 45 70, 20 60, 20 40 C 20 20, 40 10, 50 40 C 60 10, 80 20, 80 40 C 80 60, 55 70, 50 95 Z" />
+                        <path d="M50 40 C 40 50, 45 70, 50 95" />
+                        <path d="M50 40 C 60 50, 55 70, 50 95" />
+                        <!-- Stamens -->
+                        <path d="M50 40 C 48 30, 42 25, 42 22" />
+                        <circle cx="42" cy="22" r="1.5" class="fill-primary" />
+                        <path d="M50 40 C 50 28, 50 22, 50 20" />
+                        <circle cx="50" cy="20" r="1.5" class="fill-primary" />
+                        <path d="M50 40 C 52 30, 58 25, 58 22" />
+                        <circle cx="58" cy="22" r="1.5" class="fill-primary" />
+                    </svg>
+                </div>
+
+                <div class="space-y-8 relative z-10">
+                    <div>
+                        <h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white mb-2">Contact Information</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Feel free to contact us directly through these details.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Email info -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shrink-0">
+                                <span class="material-icons-outlined text-xl">email</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Email Address</h4>
+                                <a href="mailto:info@lilycare.com" class="text-gray-600 dark:text-gray-400 text-sm hover:text-primary transition-colors">info@lilycare.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone info -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shrink-0">
+                                <span class="material-icons-outlined text-xl">phone</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Phone Number</h4>
+                                <a href="tel:+18005559723" class="text-gray-600 dark:text-gray-400 text-sm hover:text-primary transition-colors">+1 (800) 555-9723</a>
+                            </div>
+                        </div>
+
+                        <!-- Location info -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shrink-0">
+                                <span class="material-icons-outlined text-xl">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Headquarters</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                    123 Bloom Street, Suite 400<br>
+                                    Flower City, CA 94103
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lavender/Floral artistic drawing under the contact details -->
+                <div class="pt-8 border-t border-gray-100 dark:border-gray-800/50 mt-8 relative z-10 flex items-center gap-3">
+                    <div class="h-px bg-primary/20 grow"></div>
+                    <span class="font-display text-lg text-primary italic">Feel Pretty All Day Long</span>
+                    <div class="h-px bg-primary/20 grow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <footer class="bg-white dark:bg-[#121214] border-t border-gray-100 dark:border-gray-800 pt-16 pb-8">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
