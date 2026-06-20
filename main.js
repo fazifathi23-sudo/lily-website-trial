@@ -210,36 +210,42 @@ function triggerLogoFadeoutOnScroll(scrollTop) {
 }
 
 // Calculate target frame index based on page scroll
+let scrollRafPending = false;
 function updateScrollProgress() {
     if (window.innerWidth < 768) return;
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    
-    // Trigger logo fadeout when scrolling
-    triggerLogoFadeoutOnScroll(scrollTop);
-    
-    // Fade out global scroll hint after user scrolls down
-    const scrollHint = document.getElementById('scroll-hint');
-    if (scrollHint) {
-        if (scrollTop > 50) {
-            scrollHint.classList.add('fade-out');
-        } else {
-            scrollHint.classList.remove('fade-out');
+    if (scrollRafPending) return;
+    scrollRafPending = true;
+    requestAnimationFrame(() => {
+        scrollRafPending = false;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        // Trigger logo fadeout when scrolling
+        triggerLogoFadeoutOnScroll(scrollTop);
+
+        // Fade out global scroll hint after user scrolls down
+        const scrollHint = document.getElementById('scroll-hint');
+        if (scrollHint) {
+            if (scrollTop > 50) {
+                scrollHint.classList.add('fade-out');
+            } else {
+                scrollHint.classList.remove('fade-out');
+            }
         }
-    }
 
-    // We only scroll-animate until the static products section starts.
-    const productsSection = document.getElementById('products');
-    const scrollLimit = productsSection ? productsSection.offsetTop : (document.documentElement.scrollHeight - window.innerHeight);
+        // We only scroll-animate until the static products section starts.
+        const productsSection = document.getElementById('products');
+        const scrollLimit = productsSection ? productsSection.offsetTop : (document.documentElement.scrollHeight - window.innerHeight);
 
-    // Calculate ratio of scroll within the anim range
-    let scrollPercent = (scrollTop / (scrollLimit || 1)) * 100;
-    scrollPercent = Math.min(Math.max(scrollPercent, 0), 100);
+        // Calculate ratio of scroll within the anim range
+        let scrollPercent = (scrollTop / (scrollLimit || 1)) * 100;
+        scrollPercent = Math.min(Math.max(scrollPercent, 0), 100);
 
-    // Map the scroll percentage to frame index in the loaded array
-    targetFrameIndex = (scrollPercent / 100) * (framesArray.length - 1);
-    
-    // Kick off animation loop
-    startAnimationLoop();
+        // Map the scroll percentage to frame index in the loaded array
+        targetFrameIndex = (scrollPercent / 100) * (framesArray.length - 1);
+
+        // Kick off animation loop
+        startAnimationLoop();
+    });
 }
 
 // Initialize Website
@@ -332,21 +338,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
     if (!header) return;
 
+    let headerRafPending = false;
+
     function updateHeaderOnScroll() {
-        const heroHeight = window.innerHeight;
-        if (window.scrollY > heroHeight * 0.85) {
-            // Scrolled past the hero — add background for readability
-            header.classList.add('bg-white/80', 'dark:bg-zinc-950/80', 'border-primary/10');
-            header.classList.remove('bg-transparent', 'border-transparent');
-        } else {
-            // Still over the hero — keep transparent
-            header.classList.remove('bg-white/80', 'dark:bg-zinc-950/80', 'border-primary/10');
-            header.classList.add('bg-transparent', 'border-transparent');
-        }
+        if (headerRafPending) return;
+        headerRafPending = true;
+        requestAnimationFrame(() => {
+            headerRafPending = false;
+            const heroHeight = window.innerHeight;
+            if (window.scrollY > heroHeight * 0.85) {
+                header.classList.add('bg-white/80', 'dark:bg-zinc-950/80', 'border-primary/10');
+                header.classList.remove('bg-transparent', 'border-transparent');
+            } else {
+                header.classList.remove('bg-white/80', 'dark:bg-zinc-950/80', 'border-primary/10');
+                header.classList.add('bg-transparent', 'border-transparent');
+            }
+        });
     }
 
     window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
-    updateHeaderOnScroll(); // run on load
+    updateHeaderOnScroll();
 })();
 
 init();
