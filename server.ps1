@@ -1,7 +1,7 @@
 # Simple local HTTP server using System.Net.HttpListener
 # Serves files from the directory where the script is executed.
 
-$port = 8080
+$port = 8085
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add("http://localhost:$port/")
 
