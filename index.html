@@ -165,7 +165,7 @@
     </header>
 
     <!-- Background Canvas Container -->
-    <div class="canvas-container">
+    <div class="canvas-container hidden md:block">
         <canvas id="animation-canvas"></canvas>
         <div class="canvas-overlay-vignette"></div>
         <!-- Logo Overlay at start of animation -->
@@ -175,7 +175,7 @@
     </div>
 
     <!-- Static Hero Section for Mobile/Small Screens -->
-    <section class="relative z-10 pt-28 pb-16 overflow-hidden bg-background-light dark:bg-background-dark bg-pattern block md:hidden">
+    <section class="relative pt-28 pb-16 overflow-hidden bg-pattern block md:hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="max-w-3xl mx-auto text-center">
@@ -198,9 +198,9 @@
     </section>
 
     <!-- Scroll Controlled Story Containers -->
-    <main class="scroll-container">
+    <main class="scroll-container hidden md:block">
         <!-- Hero Frame (0% - 18%) -->
-        <section class="scroll-section hidden md:flex" id="hero-section"></section>
+        <section class="scroll-section" id="hero-section"></section>
 
         <!-- Slide 2: Hydrodynamics (20% - 38%) -->
         <section class="scroll-section" id="hydro-section"></section>
@@ -376,30 +376,18 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
                 <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-white/20 dark:border-zinc-800/40 hover:-translate-y-1 transition-transform duration-300 col-span-12 md:col-span-6 lg:col-span-3">
-                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
-                        <span class="material-icons-outlined text-3xl">line_weight</span>
-                    </div>
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Ultra-thin comfort</h3>
                     <p class="text-gray-600 dark:text-gray-400 leading-relaxed">So thin you'll barely notice it's there, allowing you to move freely without restriction.</p>
                 </div>
                 <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-white/20 dark:border-zinc-800/40 hover:-translate-y-1 transition-transform duration-300 col-span-12 md:col-span-6 lg:col-span-3">
-                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
-                        <span class="material-icons-outlined text-3xl">spa</span>
-                    </div>
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Soft feel</h3>
                     <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Gentle on delicate skin with a cotton-like top layer that prevents irritation.</p>
                 </div>
                 <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-white/20 dark:border-zinc-800/40 hover:-translate-y-1 transition-transform duration-300 col-span-12 md:col-span-6 lg:col-span-3">
-                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
-                        <span class="material-icons-outlined text-3xl">verified_user</span>
-                    </div>
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Secure protection</h3>
                     <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Advanced core technology locks away moisture quickly to prevent leaks.</p>
                 </div>
                 <div class="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md p-8 rounded-3xl border border-white/20 dark:border-zinc-800/40 hover:-translate-y-1 transition-transform duration-300 col-span-12 md:col-span-6 lg:col-span-3">
-                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary">
-                        <span class="material-icons-outlined text-3xl">mood</span>
-                    </div>
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Everyday confidence</h3>
                     <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Feel fresh and elegant, empowered to tackle whatever your day brings.</p>
                 </div>

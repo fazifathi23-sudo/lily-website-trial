@@ -52,6 +52,15 @@ function formatFrameNum(num) {
 // Preload images
 function preloadImages() {
     return new Promise((resolve) => {
+        if (window.innerWidth < 768) {
+            // On mobile / small screens, bypass frame preloading entirely
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('fade-out');
+            }
+            resolve();
+            return;
+        }
         for (let idx = 0; idx < TOTAL_LOADABLE_FRAMES; idx++) {
             const frameIndex = framesToLoad[idx];
             const img = new Image();
@@ -88,6 +97,7 @@ let lastWidth = 0;
 let lastHeight = 0;
 
 function resizeCanvas() {
+    if (window.innerWidth < 768) return;
     const width = window.innerWidth;
     const height = window.innerHeight;
     
@@ -201,6 +211,7 @@ function triggerLogoFadeoutOnScroll(scrollTop) {
 
 // Calculate target frame index based on page scroll
 function updateScrollProgress() {
+    if (window.innerWidth < 768) return;
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     
     // Trigger logo fadeout when scrolling
@@ -235,25 +246,37 @@ function updateScrollProgress() {
 async function init() {
     await preloadImages();
 
-    // Setup initial canvas dimensions
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    if (window.innerWidth >= 768) {
+        // Setup initial canvas dimensions
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-    // Watch scroll position
-    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+        // Watch scroll position
+        window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
-    // If already scrolled down past 50px on load, hide the logo immediately
-    const initialScroll = window.scrollY || document.documentElement.scrollTop;
-    if (initialScroll > 50) {
-        logoFadeoutTriggered = true;
+        // If already scrolled down past 50px on load, hide the logo immediately
+        const initialScroll = window.scrollY || document.documentElement.scrollTop;
+        if (initialScroll > 50) {
+            logoFadeoutTriggered = true;
+            const animationLogo = document.getElementById('animation-logo');
+            if (animationLogo) {
+                animationLogo.classList.add('opacity-0');
+                animationLogo.style.display = 'none';
+            }
+        }
+
+        updateScrollProgress(); // initial run
+    } else {
+        // Hide mobile overlays
         const animationLogo = document.getElementById('animation-logo');
         if (animationLogo) {
-            animationLogo.classList.add('opacity-0');
             animationLogo.style.display = 'none';
         }
+        const scrollHint = document.getElementById('scroll-hint');
+        if (scrollHint) {
+            scrollHint.style.display = 'none';
+        }
     }
-
-    updateScrollProgress(); // initial run
 }
 
 // Scroll Reveal Observer
