@@ -329,6 +329,48 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal-on-scroll').forEach(el => {
         revealObserver.observe(el);
     });
+
+    // ── Mobile Menu ──────────────────────────────────────────────
+    const menuBtn      = document.getElementById('mobile-menu-btn');
+    const menuOverlay  = document.getElementById('mobile-menu');
+    const menuClose    = document.getElementById('mobile-menu-close');
+    const menuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    function openMobileMenu() {
+        if (!menuOverlay) return;
+        menuOverlay.classList.add('is-open');
+        menuOverlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('menu-open');
+        if (menuBtn) {
+            menuBtn.classList.add('mobile-menu-btn-open');
+            menuBtn.setAttribute('aria-expanded', 'true');
+        }
+        // Focus the close button for accessibility
+        if (menuClose) setTimeout(() => menuClose.focus(), 100);
+    }
+
+    window.closeMobileMenu = function() {
+        if (!menuOverlay) return;
+        menuOverlay.classList.remove('is-open');
+        menuOverlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+        if (menuBtn) {
+            menuBtn.classList.remove('mobile-menu-btn-open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.focus();
+        }
+    };
+
+    if (menuBtn)      menuBtn.addEventListener('click', openMobileMenu);
+    if (menuClose)    menuClose.addEventListener('click', closeMobileMenu);
+    if (menuBackdrop) menuBackdrop.addEventListener('click', closeMobileMenu);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuOverlay && menuOverlay.classList.contains('is-open')) {
+            closeMobileMenu();
+        }
+    });
 });
 
 // Mobile header: transparent over hero, opaque when scrolled past

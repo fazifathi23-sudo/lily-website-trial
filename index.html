@@ -143,11 +143,14 @@
     <header id="main-header" class="fixed w-full top-0 left-0 z-50 bg-transparent md:bg-white/30 dark:bg-transparent md:dark:bg-zinc-950/30 backdrop-blur-md border-b border-transparent md:border-primary/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
                 <a class="flex-shrink-0 flex items-center" href="#">
                     <div class="logo-liquid-container">
                         <img src="IMAGES/header-logo.png" alt="Lily Logo">
                     </div>
                 </a>
+
+                <!-- Desktop Nav Links -->
                 <div class="hidden md:flex space-x-8">
                     <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="#products">Products</a>
                     <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="#comparison">Compare</a>
@@ -156,17 +159,84 @@
                     <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="#faq">FAQ</a>
                     <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm" href="#contact">Contact</a>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <!-- Integrated Theme Toggle -->
-                    <button class="p-2 rounded-full hover:bg-white/20 dark:hover:bg-zinc-800/40 transition-colors text-text-light dark:text-text-dark" onclick="document.documentElement.classList.toggle('dark')">
+
+                <!-- Right controls -->
+                <div class="flex items-center space-x-3">
+                    <!-- Theme Toggle (always visible) -->
+                    <button class="p-2 rounded-full hover:bg-white/20 dark:hover:bg-zinc-800/40 transition-colors text-text-light dark:text-text-dark" onclick="document.documentElement.classList.toggle('dark')" aria-label="Toggle theme">
                         <span class="material-icons-outlined dark:hidden">dark_mode</span>
                         <span class="material-icons-outlined hidden dark:block">light_mode</span>
                     </button>
-                    <a class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full font-medium text-sm transition-all hover:scale-105 shadow-md shadow-primary/25" href="#products">Buy Now</a>
+
+                    <!-- Buy Now (desktop only) -->
+                    <a class="hidden md:inline-flex bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full font-medium text-sm transition-all hover:scale-105 shadow-md shadow-primary/25" href="#products">Buy Now</a>
+
+                    <!-- Hamburger Button (mobile only) -->
+                    <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-full hover:bg-white/20 dark:hover:bg-zinc-800/40 transition-all duration-300 focus:outline-none" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <span class="hamburger-line block w-5 h-0.5 bg-current rounded-full transition-all duration-300 mb-1"></span>
+                        <span class="hamburger-line block w-5 h-0.5 bg-current rounded-full transition-all duration-300 mb-1"></span>
+                        <span class="hamburger-line block w-5 h-0.5 bg-current rounded-full transition-all duration-300"></span>
+                    </button>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu-overlay md:hidden" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+        <!-- Backdrop -->
+        <div id="mobile-menu-backdrop" class="mobile-menu-backdrop"></div>
+
+        <!-- Menu Panel -->
+        <nav class="mobile-menu-panel" id="mobile-menu-panel">
+            <!-- Menu Header -->
+            <div class="flex items-center justify-between px-6 py-5 border-b border-white/10">
+                <span class="font-display text-2xl font-semibold text-primary italic">Lily</span>
+                <button id="mobile-menu-close" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-200 focus:outline-none" aria-label="Close menu">
+                    <span class="material-icons-outlined text-xl">close</span>
+                </button>
+            </div>
+
+            <!-- Nav Links -->
+            <div class="flex-1 overflow-y-auto px-6 py-8">
+                <ul class="space-y-2" role="list">
+                    <li><a href="#products" class="mobile-nav-link" onclick="closeMobileMenu()">
+                        <span class="material-icons-outlined text-primary text-lg">shopping_bag</span>
+                        Products
+                    </a></li>
+                    <li><a href="#comparison" class="mobile-nav-link" onclick="closeMobileMenu()">
+                        <span class="material-icons-outlined text-primary text-lg">compare_arrows</span>
+                        Compare
+                    </a></li>
+                    <li><a href="#benefits" class="mobile-nav-link" onclick="closeMobileMenu()">
+                        <span class="material-icons-outlined text-primary text-lg">verified</span>
+                        Benefits
+                    </a></li>
+                    <li><a href="#story" class="mobile-nav-link" onclick="closeMobileMenu()">
+                        <span class="material-icons-outlined text-primary text-lg">auto_stories</span>
+                        Our Story
+                    </a></li>
+                    <li><a href="#faq" class="mobile-nav-link" onclick="closeMobileMenu()">
+                        <span class="material-icons-outlined text-primary text-lg">help_outline</span>
+                        FAQ
+                    </a></li>
+                    <li><a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">
+                        <span class="material-icons-outlined text-primary text-lg">mail_outline</span>
+                        Contact
+                    </a></li>
+                </ul>
+            </div>
+
+            <!-- Buy Now CTA -->
+            <div class="px-6 py-6 border-t border-white/10">
+                <a href="#products" onclick="closeMobileMenu()" class="mobile-buy-btn">
+                    <span class="material-icons-outlined text-lg">shopping_cart</span>
+                    Buy Now
+                </a>
+                <p class="text-center text-xs mt-3 text-gray-400 dark:text-gray-500 italic">Feel Pretty All Day Long</p>
+            </div>
+        </nav>
+    </div>
 
     <!-- Background Canvas Container -->
     <div class="canvas-container hidden md:block">
