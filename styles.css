@@ -751,3 +751,24 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Footer Font Color Overrides */
+footer,
+footer p,
+footer span,
+footer h4,
+footer a {
+    color: #000000 !important;
+}
+footer a:hover {
+    color: #7C3AED !important; /* Elegant primary-dark hover state */
+}
+footer svg {
+    fill: #000000 !important;
+    color: #000000 !important;
+}
+footer svg:hover {
+    fill: #7C3AED !important;
+    color: #7C3AED !important;
+}
+
