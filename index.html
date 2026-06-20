@@ -178,22 +178,18 @@
         </div>
     </div>
 
-    <!-- Static Hero Section for Mobile/Small Screens -->
-    <section class="relative pt-28 pb-16 overflow-hidden bg-pattern block md:hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="max-w-3xl mx-auto text-center">
-                <!-- Visually hidden for SEO purposes -->
-                <h1 class="sr-only">Feel Pretty All Day Long - Lily</h1>
-                <p class="sr-only">Ultra-thin comfort and protection designed for your day and night. Experience the perfect blend of softness and security.</p>
-                
-                <!-- Premium Static Hero Image Banner -->
-                <div class="mb-8 max-w-sm mx-auto rounded-[2rem] overflow-hidden">
-                    <img src="IMAGES/for-hero.png" alt="Lily - Feel Pretty All Day Long" class="w-full h-auto object-cover" />
-                </div>
+    <!-- Static Hero Section for Mobile/Small Screens — Fullscreen -->
+    <section class="relative w-full block md:hidden" style="height: 100dvh; min-height: 100vh;">
+        <!-- SEO hidden content -->
+        <h1 class="sr-only">Feel Pretty All Day Long - Lily</h1>
+        <p class="sr-only">Ultra-thin comfort and protection designed for your day and night. Experience the perfect blend of softness and security.</p>
 
-            </div>
-        </div>
+        <!-- Fullscreen Hero Image -->
+        <img src="IMAGES/for-hero.png" alt="Lily - Feel Pretty All Day Long"
+             class="absolute inset-0 w-full h-full object-cover" />
+
+        <!-- Subtle bottom gradient for depth -->
+        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
     </section>
 
     <!-- Scroll Controlled Story Containers -->
