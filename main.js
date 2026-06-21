@@ -415,3 +415,53 @@ document.addEventListener('DOMContentLoaded', () => {
 init();
 
 
+
+// --- Language Support ---
+const currentLang = localStorage.getItem('site_lang') || 'en';
+
+function setLanguage(lang) {
+    if (!window.translations || !window.translations[lang]) return;
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (window.translations[lang][key]) {
+            el.innerHTML = window.translations[lang][key];
+        }
+    });
+
+    const toggles = document.querySelectorAll('button[id^="lang-toggle"]');
+    toggles.forEach(btn => {
+        btn.textContent = lang === 'en' ? 'العربية' : 'EN';
+    });
+
+    // Update specific placeholders manually if needed
+    const nameInput = document.getElementById('name');
+    if (nameInput) nameInput.placeholder = lang === 'ar' ? 'فلانة الفلانية' : 'Jane Doe';
+    const emailInput = document.getElementById('email');
+    if (emailInput) emailInput.placeholder = lang === 'ar' ? 'jane@example.com' : 'jane@example.com';
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) phoneInput.placeholder = lang === 'ar' ? '+968 12345678' : '+1 (555) 123-4567';
+    const subjInput = document.getElementById('subject');
+    if (subjInput) subjInput.placeholder = lang === 'ar' ? 'كيف يمكننا المساعدة؟' : 'How can we help?';
+    const msgInput = document.getElementById('message');
+    if (msgInput) msgInput.placeholder = lang === 'ar' ? 'رسالتك هنا...' : 'Your message here...';
+
+    localStorage.setItem('site_lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage(currentLang);
+
+    const toggles = document.querySelectorAll('button[id^="lang-toggle"]');
+    toggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const newLang = document.documentElement.lang === 'en' ? 'ar' : 'en';
+            setLanguage(newLang);
+        });
+    });
+});
+

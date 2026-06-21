@@ -1102,3 +1102,98 @@ html:not(.dark) footer svg:hover {
     color: #7C3AED !important;
 }
 
+
+/* RTL Support & Bilingual styling */
+html[dir="rtl"] {
+    --font-heading: 'Cairo', 'Playfair Display', sans-serif;
+    --font-body: 'Cairo', 'Lora', sans-serif;
+    text-align: right;
+}
+
+html[dir="rtl"] .text-left {
+    text-align: right !important;
+}
+
+html[dir="rtl"] .text-right {
+    text-align: left !important;
+}
+
+html[dir="rtl"] .left-align {
+    align-self: flex-end;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+html[dir="rtl"] .right-align {
+    align-self: flex-start;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+html[dir="rtl"] .pr-4 {
+    padding-right: 0 !important;
+    padding-left: 1rem !important;
+}
+
+html[dir="rtl"] .pl-4 {
+    padding-left: 0 !important;
+    padding-right: 1rem !important;
+}
+
+html[dir="rtl"] .pl-5 {
+    padding-left: 0 !important;
+    padding-right: 1.25rem !important;
+}
+
+html[dir="rtl"] .border-l-2 {
+    border-left-width: 0 !important;
+    border-right-width: 2px !important;
+}
+
+html[dir="rtl"] .mr-1 {
+    margin-right: 0 !important;
+    margin-left: 0.25rem !important;
+}
+
+html[dir="rtl"] .ml-2 {
+    margin-left: 0 !important;
+    margin-right: 0.5rem !important;
+}
+
+html[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]),
+html[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]),
+html[dir="rtl"] .space-x-5 > :not([hidden]) ~ :not([hidden]),
+html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]),
+html[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+}
+
+html[dir="rtl"] .right-1\/4 {
+    right: auto !important;
+    left: 25% !important;
+}
+
+html[dir="rtl"] .left-1\/4 {
+    left: auto !important;
+    right: 25% !important;
+}
+
+html[dir="rtl"] .right-\[10\%\] {
+    right: auto !important;
+    left: 10% !important;
+}
+
+html[dir="rtl"] .left-\[10\%\] {
+    left: auto !important;
+    right: 10% !important;
+}
+
+html[dir="rtl"] .text-justify {
+    text-align: right;
+}
+
+/* Ensure the language toggle button is styled correctly on mobile */
+#lang-toggle-btn {
+    font-family: 'Cairo', sans-serif;
+}
+
