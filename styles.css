@@ -10,7 +10,7 @@
     --text-secondary: #a1a1aa;
     --text-muted: #71717a;
     --font-heading: 'Playfair Display', 'Outfit', sans-serif;
-    --font-body: 'DK Pimpernel', cursive, sans-serif;
+    --font-body: 'Candara', sans-serif;
     --glass-blur: blur(16px);
 }
 
@@ -594,7 +594,7 @@ body {
     font-size: 1rem;
     color: var(--text-secondary);
     line-height: 1.7;
-    font-family: 'DK Pimpernel', cursive, sans-serif;
+    font-family: 'Candara', sans-serif;
 }
 
 /* Feature Pills inside cards */
