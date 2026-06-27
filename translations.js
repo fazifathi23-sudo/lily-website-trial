@@ -111,6 +111,8 @@ const translations = {
         "ft_privacy": "Privacy Policy",
         "ft_copy": "© 2024 Lily Care. All rights reserved.",
         "ft_desc": "Feel pretty all day long with ultra-thin comfort and reliable protection designed for you.",
+        "ft_day_use": "Lily Day Use Pads",
+        "ft_night_use": "Lily Night Use Pads",
         // Privacy Policy
         "priv_title": "Privacy Policy",
         "priv_date": "Last Updated: June 20, 2026",
@@ -272,6 +274,8 @@ const translations = {
         "ft_privacy": "سياسة الخصوصية",
         "ft_copy": "© 2024 رعاية ليلي. جميع الحقوق محفوظة.",
         "ft_desc": "اشعري بالجمال طوال اليوم مع راحة فائقة الرقة وحماية موثوقة مصممة لك.",
+        "ft_day_use": "فوط ليلي للاستخدام اليومي",
+        "ft_night_use": "فوط ليلي للاستخدام الليلي",
         // Privacy Policy
         "priv_title": "سياسة الخصوصية",
         "priv_date": "آخر تحديث: 20 يونيو 2026",
