@@ -463,5 +463,23 @@ document.addEventListener('DOMContentLoaded', () => {
             setLanguage(newLang);
         });
     });
+
+    // YouTube Autoplay Observer
+    const youtubeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const container = entry.target;
+                const iframe = container.querySelector('iframe');
+                if (iframe && !iframe.src) {
+                    iframe.src = container.getAttribute('data-src');
+                }
+                youtubeObserver.unobserve(container); // Trigger only once
+            }
+        });
+    }, { threshold: 0.5 }); // 0.5 means autoplay starts when half the video is visible
+
+    document.querySelectorAll('.youtube-autoplay-observer').forEach(el => {
+        youtubeObserver.observe(el);
+    });
 });
 
