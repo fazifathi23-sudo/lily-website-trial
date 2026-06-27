@@ -481,5 +481,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.youtube-autoplay-observer').forEach(el => {
         youtubeObserver.observe(el);
     });
-});
 
+    // Mobile Hero Image Slider (runs only on mobile)
+    (function initMobileSlider() {
+        if (window.innerWidth >= 768) return; // Only for mobile devices
+
+        const slider = document.getElementById('mobile-hero-slider');
+        if (!slider) return;
+
+        let currentIndex = 0;
+        const slidesCount = slider.children.length;
+
+        if (slidesCount <= 1) return;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slidesCount;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }, 3000);
+    })();
+});
