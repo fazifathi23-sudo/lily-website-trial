@@ -497,6 +497,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(() => {
             currentIndex = (currentIndex + 1) % slidesCount;
             slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }, 3000);
+        }, 5000);
     })();
 });
