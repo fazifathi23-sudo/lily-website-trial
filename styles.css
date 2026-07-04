@@ -1,11 +1,11 @@
-/* Custom Design Tokens & variables */
+﻿/* Custom Design Tokens & variables */
 :root {
     --bg-dark: #1D121B;
     --bg-card: rgba(29, 18, 27, 0.45);
-    --border-glow: rgba(236, 72, 153, 0.2);
+    --border-glow: rgba(244, 143, 177, 0.2);
     --border-muted: rgba(255, 255, 255, 0.07);
-    --primary: #8B5CF6;
-    --secondary: #EC4899;
+    --primary: #967BB6;
+    --secondary: #F48FB1;
     --text-primary: #f8fafc;
     --text-secondary: #a1a1aa;
     --text-muted: #71717a;
@@ -29,14 +29,14 @@ html {
 body {
     background-color: var(--bg-dark);
     background-image:
-        radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 20%, rgba(150, 123, 182, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(244, 143, 177, 0.06) 0%, transparent 60%),
         radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.04) 0%, transparent 70%);
     animation: none;
     color: var(--text-primary);
     font-family: var(--font-body);
     overflow-x: hidden;
-    overflow-y: scroll;                        /* Always show scrollbar — prevents layout shift */
+    overflow-y: scroll;                        /* Always show scrollbar â€” prevents layout shift */
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -102,14 +102,14 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+    text-shadow: 0 0 30px rgba(244, 143, 177, 0.2);
 }
 
 .logo-glow {
     position: absolute;
     width: 80px;
     height: 80px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(150, 123, 182, 0.4) 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -183,7 +183,7 @@ body {
     height: 10px;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+    box-shadow: 0 0 10px rgba(244, 143, 177, 0.6);
 }
 
 .brand-text {
@@ -220,13 +220,13 @@ body {
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);
+    box-shadow: 0 4px 15px rgba(244, 143, 177, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+    box-shadow: 0 6px 20px rgba(244, 143, 177, 0.4);
 }
 
 /* Canvas background container */
@@ -291,11 +291,11 @@ body {
 @keyframes logoPulse {
     0%, 100% {
         transform: scale(1);
-        filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.3));
+        filter: drop-shadow(0 0 30px rgba(150, 123, 182, 0.3));
     }
     50% {
         transform: scale(1.02);
-        filter: drop-shadow(0 0 45px rgba(139, 92, 246, 0.5));
+        filter: drop-shadow(0 0 45px rgba(150, 123, 182, 0.5));
     }
 }
 
@@ -333,13 +333,13 @@ body {
 .slide-content.active {
     opacity: 1;
     pointer-events: auto;
-    box-shadow: 0 30px 70px rgba(139, 92, 246, 0.12), 0 0 40px rgba(139, 92, 246, 0.08);
-    border-color: rgba(139, 92, 246, 0.35);
+    box-shadow: 0 30px 70px rgba(150, 123, 182, 0.12), 0 0 40px rgba(150, 123, 182, 0.08);
+    border-color: rgba(150, 123, 182, 0.35);
 }
 
 .dark .slide-content.active {
-    box-shadow: 0 30px 70px rgba(139, 92, 246, 0.22), 0 0 50px rgba(139, 92, 246, 0.12);
-    border-color: rgba(139, 92, 246, 0.25);
+    box-shadow: 0 30px 70px rgba(150, 123, 182, 0.22), 0 0 50px rgba(150, 123, 182, 0.12);
+    border-color: rgba(150, 123, 182, 0.25);
 }
 
 /* Text alignments */
@@ -363,14 +363,14 @@ body {
 /* Glassmorphism Card Style */
 .glass-card {
     background: rgba(253, 252, 254, 0.65);
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(150, 123, 182, 0.2);
     border-top: 1px solid rgba(255, 255, 255, 0.45);
     border-left: 1px solid rgba(255, 255, 255, 0.35);
     padding: 2.5rem;
     border-radius: 24px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(150, 123, 182, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
     transform: translateZ(0);        /* Force GPU compositing layer */
@@ -381,7 +381,7 @@ body {
 
 .dark .glass-card {
     background: rgba(20, 20, 25, 0.55); /* Translucent dark backing in dark mode */
-    border: 1px solid rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(150, 123, 182, 0.15);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.05);
@@ -413,7 +413,7 @@ body {
     right: 0;
     bottom: 0;
     border-radius: 24px;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent 70%);
+    background: linear-gradient(135deg, rgba(150, 123, 182, 0.1), transparent 70%);
     pointer-events: none;
 }
 
@@ -426,7 +426,7 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 10px 40px -10px rgba(139, 92, 246, 0.08),
+    box-shadow: 0 10px 40px -10px rgba(150, 123, 182, 0.08),
                 inset 0 1px 2px rgba(255, 255, 255, 0.45);
     border-radius: 28px;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
@@ -446,15 +446,15 @@ body {
 
 .premium-glass-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 50px -10px rgba(139, 92, 246, 0.15),
+    box-shadow: 0 20px 50px -10px rgba(150, 123, 182, 0.15),
                 inset 0 1px 2px rgba(255, 255, 255, 0.5);
-    border-color: rgba(139, 92, 246, 0.3);
+    border-color: rgba(150, 123, 182, 0.3);
 }
 
 .dark .premium-glass-card:hover {
     box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.55),
                 inset 0 1px 1px rgba(255, 255, 255, 0.25);
-    border-color: rgba(139, 92, 246, 0.25);
+    border-color: rgba(150, 123, 182, 0.25);
 }
 
 /* Glassmorphism item style for 8 layers inner items */
@@ -464,7 +464,7 @@ body {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 20px;
-    box-shadow: 0 4px 20px -5px rgba(139, 92, 246, 0.04),
+    box-shadow: 0 4px 20px -5px rgba(150, 123, 182, 0.04),
                 inset 0 1px 1px rgba(255, 255, 255, 0.3);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -478,13 +478,13 @@ body {
 
 .premium-glass-item:hover {
     background: rgba(255, 255, 255, 0.55);
-    border-color: rgba(139, 92, 246, 0.3);
+    border-color: rgba(150, 123, 182, 0.3);
     transform: translateY(-2px);
 }
 
 .dark .premium-glass-item:hover {
     background: rgba(245, 240, 255, 0.12);
-    border-color: rgba(139, 92, 246, 0.25);
+    border-color: rgba(150, 123, 182, 0.25);
 }
 
 /* Glassmorphism card for FAQ items */
@@ -494,7 +494,7 @@ body {
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 20px;
-    box-shadow: 0 4px 25px -5px rgba(139, 92, 246, 0.04),
+    box-shadow: 0 4px 25px -5px rgba(150, 123, 182, 0.04),
                 inset 0 1px 1px rgba(255, 255, 255, 0.3);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -508,12 +508,12 @@ body {
 
 .premium-glass-faq-card:hover {
     background: rgba(255, 255, 255, 0.7);
-    border-color: rgba(139, 92, 246, 0.3);
+    border-color: rgba(150, 123, 182, 0.3);
 }
 
 .dark .premium-glass-faq-card:hover {
     background: rgba(245, 240, 255, 0.14);
-    border-color: rgba(139, 92, 246, 0.25);
+    border-color: rgba(150, 123, 182, 0.25);
 }
 
 /* Floating Animations for Petals, Flowers, and Butterflies */
@@ -546,17 +546,17 @@ body {
 
 /* Decorative container shapes */
 .deco-petal {
-    filter: drop-shadow(0 4px 10px rgba(236, 72, 153, 0.05));
+    filter: drop-shadow(0 4px 10px rgba(244, 143, 177, 0.05));
     transition: opacity 0.3s;
 }
 
 .deco-lavender {
-    filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.05));
+    filter: drop-shadow(0 4px 12px rgba(150, 123, 182, 0.05));
     transition: opacity 0.3s;
 }
 
 .deco-butterfly {
-    filter: drop-shadow(0 6px 15px rgba(236, 72, 153, 0.08));
+    filter: drop-shadow(0 6px 15px rgba(244, 143, 177, 0.08));
     transition: opacity 0.3s;
 }
 
@@ -609,8 +609,8 @@ body {
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--primary);
-    background: rgba(0, 242, 254, 0.08);
-    border: 1px solid rgba(0, 242, 254, 0.15);
+    background: rgba(244, 143, 177, 0.08);
+    border: 1px solid rgba(244, 143, 177, 0.15);
     padding: 0.3rem 0.8rem;
     border-radius: 50px;
 }
@@ -720,7 +720,7 @@ body {
 .spec-card:hover {
     transform: translateY(-5px);
     border-color: var(--border-glow);
-    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.05);
+    box-shadow: 0 10px 30px rgba(244, 143, 177, 0.05);
 }
 
 .spec-icon {
@@ -755,7 +755,7 @@ body {
 /* Specs Action Banner */
 .specs-banner {
     position: relative;
-    background: radial-gradient(circle at top right, rgba(0, 242, 254, 0.1), transparent), rgba(13, 18, 30, 0.4);
+    background: radial-gradient(circle at top right, rgba(244, 143, 177, 0.1), transparent), rgba(13, 18, 30, 0.4);
     border: 1px solid var(--border-glow);
     padding: 4rem 3rem;
     border-radius: 24px;
@@ -795,13 +795,13 @@ body {
     padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
+    box-shadow: 0 4px 15px rgba(244, 143, 177, 0.25);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .cta-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+    box-shadow: 0 8px 25px rgba(244, 143, 177, 0.4);
 }
 
 .cta-secondary {
@@ -877,8 +877,8 @@ body {
     background: rgba(248, 245, 255, 0.92);
     backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px);
-    border-left: 1px solid rgba(139, 92, 246, 0.2);
-    box-shadow: -8px 0 40px rgba(139, 92, 246, 0.15);
+    border-left: 1px solid rgba(150, 123, 182, 0.2);
+    box-shadow: -8px 0 40px rgba(150, 123, 182, 0.15);
     transform: translateX(100%);
     transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
     overflow: hidden;
@@ -887,7 +887,7 @@ body {
 
 .dark .mobile-menu-panel {
     background: rgba(18, 10, 24, 0.94);
-    border-left: 1px solid rgba(139, 92, 246, 0.25);
+    border-left: 1px solid rgba(150, 123, 182, 0.25);
     box-shadow: -8px 0 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -903,7 +903,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #8B5CF6, #EC4899);
+    background: linear-gradient(90deg, #967BB6, #F48FB1);
 }
 
 /* Individual nav links */
@@ -927,8 +927,8 @@ body {
 
 .mobile-nav-link:hover,
 .mobile-nav-link:focus {
-    background: rgba(139, 92, 246, 0.1);
-    color: #8B5CF6;
+    background: rgba(150, 123, 182, 0.1);
+    color: #967BB6;
     transform: translateX(4px);
     outline: none;
 }
@@ -963,14 +963,14 @@ body {
     font-weight: 600;
     color: #ffffff;
     text-decoration: none;
-    background: linear-gradient(135deg, #8B5CF6, #EC4899);
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
+    background: linear-gradient(135deg, #967BB6, #F48FB1);
+    box-shadow: 0 6px 20px rgba(150, 123, 182, 0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .mobile-buy-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(139, 92, 246, 0.45);
+    box-shadow: 0 10px 28px rgba(150, 123, 182, 0.45);
 }
 
 /* Hamburger animated to X */
@@ -1040,7 +1040,7 @@ body.menu-open {
     -webkit-backdrop-filter: blur(24px);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.03);
+    box-shadow: 0 20px 50px rgba(150, 123, 182, 0.03);
     position: relative;
     transform: translateZ(0);        /* Promote each section to its own compositor layer */
     contain: layout style;           /* Scope reflows inside the section */
