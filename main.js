@@ -301,6 +301,10 @@ const revealObserver = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
             revealObserver.unobserve(entry.target); // Trigger only once
+            // Remove classes after animation completes to allow hover transforms
+            setTimeout(() => {
+                entry.target.classList.remove('reveal-on-scroll', 'revealed');
+            }, 800);
         }
     });
 }, { threshold: 0.1 });
@@ -336,6 +340,12 @@ window.toggleFaq = function(btn) {
 
 // Initialize when DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Dynamically add reveal animation to all boxes/cards
+    const boxSelectors = '.premium-glass-card, .premium-glass-item, .premium-glass-faq-card, .glass-card, .spec-card, .slide-content';
+    document.querySelectorAll(boxSelectors).forEach(el => {
+        el.classList.add('reveal-on-scroll');
+    });
+
     document.querySelectorAll('.reveal-on-scroll').forEach(el => {
         revealObserver.observe(el);
     });
